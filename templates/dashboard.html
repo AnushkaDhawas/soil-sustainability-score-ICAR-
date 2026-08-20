@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+{% block title %}Calculator{% endblock %}
+
+{% block content %}
+<main class="dashboard-main">
+
+  <div class="dashboard-intro">
+    <h1>Soil Sustainability Calculator</h1>
+    <p>Enter soil test parameters, or look up an existing profile by village.</p>
+    <span class="role-badge" id="role-badge" hidden></span>
+  </div>
+
+  <section class="panel input-panel">
+    <div class="tabs" role="tablist" id="tabs-container">
+      <button class="tab-btn active" data-tab="manual" role="tab" aria-selected="true" id="manual-tab-btn">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="M9 3h6M10 3v5.5L5 17a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-8.5V3"/></svg>
+        Manual Entry
+      </button>
+      <button class="tab-btn" data-tab="location" role="tab" aria-selected="false">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="tab-icon"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        Find by Village
+      </button>
+    </div>
+
+    <p id="role-notice" class="role-notice" hidden></p>
+
+    <form id="manual-form" class="tab-panel active" data-panel="manual">
+      <div class="field-grid">
+        <label>pH
+          <input type="number" step="0.1" name="ph" placeholder="6.8" required>
+        </label>
+        <label>Electrical Conductivity (dS/m)
+          <input type="number" step="0.1" name="ec" placeholder="0.9" required>
+        </label>
+        <label>Organic Carbon (%)
+          <input type="number" step="0.01" name="organic_carbon" placeholder="0.55" required>
+        </label>
+        <label>Nitrogen (kg/ha)
+          <input type="number" step="1" name="nitrogen" placeholder="150" required>
+        </label>
+        <label>Phosphorus (kg/ha)
+          <input type="number" step="1" name="phosphorus" placeholder="20" required>
+        </label>
+        <label>Potassium (kg/ha)
+          <input type="number" step="1" name="potassium" placeholder="300" required>
+        </label>
+        <label>Soil Texture
+          <select name="texture">
+            <option value="65">Clay</option>
+            <option value="45">Gravely Clay</option>
+          </select>
+        </label>
+      </div>
+      <button type="submit" class="btn-primary">Calculate Score</button>
+    </form>
+
+    <form id="location-form" class="tab-panel" data-panel="location">
+      <div class="field-grid">
+        <label>State
+          <input type="text" name="state" placeholder="Maharashtra">
+        </label>
+        <label>District
+          <input type="text" name="district" placeholder="Akola">
+        </label>
+        <label>Block
+          <input type="text" name="block" placeholder="Barshitakli">
+        </label>
+        <label>Village
+          <input type="text" name="village" placeholder="e.g. Ghota">
+        </label>
+      </div>
+      <button type="submit" class="btn-primary">Find Profiles</button>
+    </form>
+
+    <p id="form-error" class="form-error" hidden></p>
+  </section>
+
+  <section id="result-panel" class="panel result-panel" hidden>
+    <div class="result-layout">
+      <div class="core-sample" aria-hidden="true">
+        <div class="core-layer chemical-layer">
+          <span class="layer-label">Chemical<br>70%</span>
+        </div>
+        <div class="core-layer physical-layer">
+          <span class="layer-label">Physical<br>30%</span>
+        </div>
+      </div>
+      <div class="result-details">
+        <p class="score-label">Soil Sustainability Score</p>
+        <p class="score-number" id="score-number">&mdash;</p>
+        <p class="score-category" id="score-category">&mdash;</p>
+        <dl class="score-breakdown">
+          <div><dt>Chemical Health</dt><dd id="chem-score">&mdash;</dd></div>
+          <div><dt>Physical Health</dt><dd id="phys-score">&mdash;</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="location-results" class="panel result-panel" hidden>
+    <h2>Matching Soil Profiles</h2>
+    <div id="location-results-list" class="profile-list"></div>
+  </section>
+
+  <section class="panel map-panel">
+    <h2>
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#2D4A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="section-icon"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><path d="M8 2v16M16 6v16"/></svg>
+      Village-Level Sustainability Map
+    </h2>
+    <p>Explore every scored soil profile across Akola district, plotted by location and colour-coded by sustainability category.</p>
+    <a class="btn-secondary" href="/map" target="_blank" rel="noopener">Open Interactive Map &rarr;</a>
+  </section>
+
+</main>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+{% endblock %}

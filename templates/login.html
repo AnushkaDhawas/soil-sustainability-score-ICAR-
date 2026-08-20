@@ -1,0 +1,43 @@
+{% extends "base.html" %} {% block title %}Log In{% endblock %} {% block content %}
+<main class="auth-page">
+    <div class="auth-card">
+        <div class="horizon-mark-lg" aria-hidden="true">
+            <span class="band band-1"></span>
+            <span class="band band-2"></span>
+            <span class="band band-3"></span>
+            <span class="band band-4"></span>
+        </div>
+        <h1>Welcome back</h1>
+        <p class="auth-sub">Log in to access the soil sustainability dashboard.</p>
+
+        <form id="login-form" class="auth-form">
+            <label>
+        Role
+        <select name="role" id="role">
+          <option value="Farmer">Farmer</option>
+          <option value="Researcher">Researcher</option>
+          <option value="Administrator">Administrator</option>
+        </select>
+      </label>
+            <label>
+        Email
+        <input type="email" name="email" id="email" placeholder="you@example.com" required>
+      </label>
+            <label>
+        Password
+        <input type="password" name="password" id="password" placeholder="&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;" required>
+      </label>
+            <button type="submit" class="btn-primary btn-full" id="login-submit">Log In</button>
+            <p id="login-error" class="form-error" hidden></p>
+        </form>
+
+        <!-- <p class="auth-note">
+      Demo note: this login is a front-end interface only &mdash; there is no account
+      database or authentication server behind it yet. Any email/password will work.
+      The selected role determines which calculator features are shown.
+    </p> -->
+    </div>
+</main>
+{% endblock %} {% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}
