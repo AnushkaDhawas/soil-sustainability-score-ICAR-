@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1400 700" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#8FBE5A"/>
+          <stop offset="55%" stop-color="#5B8C3A"/>
+          <stop offset="100%" stop-color="#2D4A1E"/>
+        </linearGradient>
+        <linearGradient id="fieldGradA" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7FB855"/>
+          <stop offset="100%" stop-color="#4C7A2E"/>
+        </linearGradient>
+        <linearGradient id="fieldGradB" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#5B8C3A"/>
+          <stop offset="100%" stop-color="#2D4A1E"/>
+        </linearGradient>
+      </defs>
+
+      <rect x="0" y="0" width="1400" height="700" fill="url(#skyGrad)"/>
+      <circle cx="1180" cy="150" r="90" fill="#F1E3B8" opacity="0.85"/>
+
+      <!-- distant rolling hills -->
+      <path d="M0,320 Q250,260 500,310 T1000,300 T1400,290 V700 H0 Z" fill="#3F6B28" opacity="0.9"/>
+      <path d="M0,380 Q300,330 600,370 T1200,360 T1400,355 V700 H0 Z" fill="#2D4A1E"/>
+
+      <!-- terraced crop fields -->
+      <rect x="0" y="440" width="1400" height="90" fill="url(#fieldGradA)"/>
+      <g stroke="#3F6B28" stroke-width="4" opacity="0.5">
+        <path d="M-40,455 Q700,435 1440,455"/>
+        <path d="M-40,475 Q700,452 1440,475"/>
+        <path d="M-40,497 Q700,472 1440,497"/>
+        <path d="M-40,520 Q700,494 1440,520"/>
+      </g>
+
+      <rect x="0" y="530" width="1400" height="170" fill="url(#fieldGradB)"/>
+      <g stroke="#1F3714" stroke-width="5" opacity="0.55">
+        <path d="M-40,555 Q700,525 1440,555"/>
+        <path d="M-40,585 Q700,552 1440,585"/>
+        <path d="M-40,618 Q700,582 1440,618"/>
+        <path d="M-40,652 Q700,614 1440,652"/>
+        <path d="M-40,688 Q700,648 1440,688"/>
+      </g>
+
+      <!-- farmhouse cluster -->
+      <g transform="translate(160,390)">
+        <rect x="0" y="26" width="70" height="50" fill="#EAD1C8"/>
+        <polygon points="-8,26 35,-14 78,26" fill="#8A3623"/>
+        <rect x="28" y="48" width="16" height="28" fill="#2D4A1E"/>
+        <rect x="10" y="40" width="12" height="12" fill="#F1E3B8"/>
+      </g>
+
+      <!-- trees -->
+      <g transform="translate(1020,400)">
+        <rect x="20" y="30" width="9" height="46" fill="#4A3423"/>
+        <circle cx="24" cy="22" r="30" fill="#3F6B28"/>
+      </g>
+      <g transform="translate(1090,420)">
+        <rect x="14" y="22" width="7" height="34" fill="#4A3423"/>
+        <circle cx="17" cy="16" r="22" fill="#4C7A2E"/>
+      </g>
+
+      <!-- birds -->
+      <g stroke="#F1E3B8" stroke-width="3" fill="none" opacity="0.8" stroke-linecap="round">
+        <path d="M300,120 q12,-14 24,0 q12,-14 24,0"/>
+        <path d="M370,160 q10,-11 20,0 q10,-11 20,0"/>
+        <path d="M250,180 q9,-10 18,0 q9,-10 18,0"/>
+      </g>
+    </svg>
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <span class="eyebrow">Akola District Pilot &middot; ICAR &middot; Government Agri-Tech Initiative</span>
+    <h1>Know your soil's sustainability in one score.</h1>
+    <p class="hero-sub">
+      A data-driven system that turns raw soil test parameters into a single, clear
+      sustainability score and category &mdash; validated against real government soil
+      survey data and machine learning.
+    </p>
+    <div class="hero-actions">
+      <a href="{{ url_for('dashboard') }}" class="btn-primary btn-lg">Try the Calculator &rarr;</a>
+      <a href="{{ url_for('about') }}" class="btn-ghost btn-lg">Learn How It Works</a>
+    </div>
+  </div>
+</section>
+
+<section class="stats-strip">
+  <div class="stat">
+    <span class="stat-number">86</span>
+    <span class="stat-label">Real soil profiles scored</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number">90.91%</span>
+    <span class="stat-label">ML model accuracy</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number">2</span>
+    <span class="stat-label">Models validated (RF &amp; XGBoost)</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number">7</span>
+    <span class="stat-label">Soil parameters analyzed</span>
+  </div>
+</section>
+
+<main class="landing-main">
+  <section class="feature-grid">
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#DCEAD0;">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2D5A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v5.5L5 17a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-8.5V3"/></svg>
+      </div>
+      <h3>Instant Scoring</h3>
+      <p>Enter pH, EC, organic carbon, N, P, K, and texture &mdash; get a 0&ndash;100 sustainability score and category immediately, backed by a transparent, calibrated formula.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#F1DCB8;">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#8A5A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><rect x="7" y="12" width="3" height="6"/><rect x="12" y="8" width="3" height="10"/><rect x="17" y="5" width="3" height="13"/></svg>
+      </div>
+      <h3>ML-Validated</h3>
+      <p>Random Forest and XGBoost models trained on real Akola soil data confirm the scoring logic, both reaching 90.91% classification accuracy.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon" style="background:#DCEAD0;">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="#2D5A1E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      </div>
+      <h3>Village Lookup</h3>
+      <p>No lab report on hand? Search by village name and see the sustainability score for soil profiles already surveyed in your area.</p>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <h2>Ready to check your soil?</h2>
+    <p>Use the calculator with your own soil test values, or look up an existing profile by village.</p>
+    <a href="{{ url_for('dashboard') }}" class="btn-primary btn-lg">Open the Calculator &rarr;</a>
+  </section>
+</main>
+{% endblock %}

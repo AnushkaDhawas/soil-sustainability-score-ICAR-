@@ -1,0 +1,4252 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0d8d0c137dccce565f019ad85de86176 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+                background: white; padding: 12px 16px; border-radius: 6px;
+                box-shadow: 0 1px 4px rgba(0,0,0,0.3); font-family: Arial, sans-serif; font-size: 13px;">
+        <b>Sustainability Category</b><br>
+        <span style="color:green;">&#9679;</span> Highly Sustainable<br>
+        <span style="color:blue;">&#9679;</span> Moderately Sustainable<br>
+        <span style="color:orange;">&#9679;</span> Needs Improvement<br>
+        <span style="color:red;">&#9679;</span> Unsustainable
+    </div>
+    
+    
+            <div class="folium-map" id="map_0d8d0c137dccce565f019ad85de86176" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_0d8d0c137dccce565f019ad85de86176 = L.map(
+                "map_0d8d0c137dccce565f019ad85de86176",
+                {
+                    center: [20.50293920425119, 77.32489626664834],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_5cdeee47d8547dc0a0cfbbc6ce29f436 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_5cdeee47d8547dc0a0cfbbc6ce29f436.addTo(map_0d8d0c137dccce565f019ad85de86176);
+        
+    
+            var marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61 = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_950dbe41d129967cf649039fba9ecc41 = L.marker(
+                [20.56698999246, 77.32231439119741],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_9e3991f81d643ce78d07a69a5f998934 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_28107bd448fdbdeff7652cfe707245d2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e5afc54c8718dd2407c06b7969d8eef2 = $(`<div id="html_e5afc54c8718dd2407c06b7969d8eef2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Ghota</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_28107bd448fdbdeff7652cfe707245d2.setContent(html_e5afc54c8718dd2407c06b7969d8eef2);
+            
+        
+
+        marker_950dbe41d129967cf649039fba9ecc41.bindPopup(popup_28107bd448fdbdeff7652cfe707245d2)
+        ;
+
+        
+    
+    
+            marker_950dbe41d129967cf649039fba9ecc41.bindTooltip(
+                `<div>
+                     Ghota — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_950dbe41d129967cf649039fba9ecc41.setIcon(icon_9e3991f81d643ce78d07a69a5f998934);
+            
+    
+            var marker_6776d8462e1804b6206dc1ac46dd8ec0 = L.marker(
+                [20.567048306488683, 77.32295680564039],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_7d5f7c3e6f7f40feeabbd7d4936b1215 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1063d082297522fce057e22f7f575a6c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a4930408a9f110a7b4abadac46f4c1dc = $(`<div id="html_a4930408a9f110a7b4abadac46f4c1dc" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Ghota</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.53<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 67.18<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.9 | EC: 0.26<br>         OC: 1.03 | N: 152.5<br>         P: 20.3 | K: 108.2     </div>     </div>`)[0];
+                popup_1063d082297522fce057e22f7f575a6c.setContent(html_a4930408a9f110a7b4abadac46f4c1dc);
+            
+        
+
+        marker_6776d8462e1804b6206dc1ac46dd8ec0.bindPopup(popup_1063d082297522fce057e22f7f575a6c)
+        ;
+
+        
+    
+    
+            marker_6776d8462e1804b6206dc1ac46dd8ec0.bindTooltip(
+                `<div>
+                     Ghota — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6776d8462e1804b6206dc1ac46dd8ec0.setIcon(icon_7d5f7c3e6f7f40feeabbd7d4936b1215);
+            
+    
+            var marker_097c4f9ce2a22f713292a7b8d33386c0 = L.marker(
+                [20.56612303732434, 77.32292665206089],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_c42417b1b80503609b2e7e642e58cb6b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a75cbfddcccc278bbb27cad7987c983a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1aaa16dd610de47b67b88b49b574a3ea = $(`<div id="html_1aaa16dd610de47b67b88b49b574a3ea" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Ghota</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 62.67<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 70.25<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.6 | EC: 0.14<br>         OC: 0.94 | N: 125.6<br>         P: 15.2 | K: 319.4     </div>     </div>`)[0];
+                popup_a75cbfddcccc278bbb27cad7987c983a.setContent(html_1aaa16dd610de47b67b88b49b574a3ea);
+            
+        
+
+        marker_097c4f9ce2a22f713292a7b8d33386c0.bindPopup(popup_a75cbfddcccc278bbb27cad7987c983a)
+        ;
+
+        
+    
+    
+            marker_097c4f9ce2a22f713292a7b8d33386c0.bindTooltip(
+                `<div>
+                     Ghota — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_097c4f9ce2a22f713292a7b8d33386c0.setIcon(icon_c42417b1b80503609b2e7e642e58cb6b);
+            
+    
+            var marker_1d4a77200bbd886ab385dd25a886f27d = L.marker(
+                [20.56725461658319, 77.32223909444996],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_de8dd764953d9fd5298d64e47f365699 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_22809d2fb9eec9f148c1fa8ac7a33e23 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_eaeeefe470ff3f8e1372572da957d161 = $(`<div id="html_eaeeefe470ff3f8e1372572da957d161" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Ghota</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 58.06<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 55.08<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.9 | EC: 0.81<br>         OC: 0.82 | N: 64.9<br>         P: 17.0 | K: 708.1     </div>     </div>`)[0];
+                popup_22809d2fb9eec9f148c1fa8ac7a33e23.setContent(html_eaeeefe470ff3f8e1372572da957d161);
+            
+        
+
+        marker_1d4a77200bbd886ab385dd25a886f27d.bindPopup(popup_22809d2fb9eec9f148c1fa8ac7a33e23)
+        ;
+
+        
+    
+    
+            marker_1d4a77200bbd886ab385dd25a886f27d.bindTooltip(
+                `<div>
+                     Ghota — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1d4a77200bbd886ab385dd25a886f27d.setIcon(icon_de8dd764953d9fd5298d64e47f365699);
+            
+    
+            var marker_722bff227096fb1fb903ded64c46c303 = L.marker(
+                [20.56629449958725, 77.3231291591531],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_cd52abb9f2be600c2f1f2702e2795557 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57ded7cf02883d97faa6a5926c5ec1fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_002ffba66012bda489f0b573b6755647 = $(`<div id="html_002ffba66012bda489f0b573b6755647" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Ghota</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 59.93<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 66.33<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.5 | EC: 0.14<br>         OC: 2.6 | N: 149.3<br>         P: 23.0 | K: 758.5     </div>     </div>`)[0];
+                popup_57ded7cf02883d97faa6a5926c5ec1fb.setContent(html_002ffba66012bda489f0b573b6755647);
+            
+        
+
+        marker_722bff227096fb1fb903ded64c46c303.bindPopup(popup_57ded7cf02883d97faa6a5926c5ec1fb)
+        ;
+
+        
+    
+    
+            marker_722bff227096fb1fb903ded64c46c303.bindTooltip(
+                `<div>
+                     Ghota — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_722bff227096fb1fb903ded64c46c303.setIcon(icon_cd52abb9f2be600c2f1f2702e2795557);
+            
+    
+            var marker_5f68039d308fd8b353d8fef8c7eb4493 = L.marker(
+                [20.566024577578645, 77.3222023849734],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_ac21f17d41be0f9f9ac9619253fb361e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bc6f0cf0a7fd7db4a58d24a23202dd5c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c2d149219fc5d28744201bc10d9873f3 = $(`<div id="html_c2d149219fc5d28744201bc10d9873f3" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Ghota</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_bc6f0cf0a7fd7db4a58d24a23202dd5c.setContent(html_c2d149219fc5d28744201bc10d9873f3);
+            
+        
+
+        marker_5f68039d308fd8b353d8fef8c7eb4493.bindPopup(popup_bc6f0cf0a7fd7db4a58d24a23202dd5c)
+        ;
+
+        
+    
+    
+            marker_5f68039d308fd8b353d8fef8c7eb4493.bindTooltip(
+                `<div>
+                     Ghota — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5f68039d308fd8b353d8fef8c7eb4493.setIcon(icon_ac21f17d41be0f9f9ac9619253fb361e);
+            
+    
+            var marker_ff44338b4d9bd2266a0dab4dc0e1a7cc = L.marker(
+                [20.531279081896116, 77.32310840240105],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_7fc05e593d065743bf79686981cff65c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9d934f5e6a8a9c9e31aa88f8606e6700 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4a3401bfddd00ada9872a551ea427331 = $(`<div id="html_4a3401bfddd00ada9872a551ea427331" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_9d934f5e6a8a9c9e31aa88f8606e6700.setContent(html_4a3401bfddd00ada9872a551ea427331);
+            
+        
+
+        marker_ff44338b4d9bd2266a0dab4dc0e1a7cc.bindPopup(popup_9d934f5e6a8a9c9e31aa88f8606e6700)
+        ;
+
+        
+    
+    
+            marker_ff44338b4d9bd2266a0dab4dc0e1a7cc.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ff44338b4d9bd2266a0dab4dc0e1a7cc.setIcon(icon_7fc05e593d065743bf79686981cff65c);
+            
+    
+            var marker_f75e834d5866742a6b5ae26c977932f0 = L.marker(
+                [20.53223085999773, 77.32252453015596],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_56060a4e4fea74dcac5dcfd98939e573 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6c173bcbba5932f974fe958dfa38ca6b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8aae7a3ab8b4a656eee9782104e231e7 = $(`<div id="html_8aae7a3ab8b4a656eee9782104e231e7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 59.0<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 65.0<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.3 | EC: 0.12<br>         OC: 0.99 | N: 122.4<br>         P: 25.0 | K: 936.3     </div>     </div>`)[0];
+                popup_6c173bcbba5932f974fe958dfa38ca6b.setContent(html_8aae7a3ab8b4a656eee9782104e231e7);
+            
+        
+
+        marker_f75e834d5866742a6b5ae26c977932f0.bindPopup(popup_6c173bcbba5932f974fe958dfa38ca6b)
+        ;
+
+        
+    
+    
+            marker_f75e834d5866742a6b5ae26c977932f0.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f75e834d5866742a6b5ae26c977932f0.setIcon(icon_56060a4e4fea74dcac5dcfd98939e573);
+            
+    
+            var marker_81536e82bdd8eb58c026cf320393c8c1 = L.marker(
+                [20.532093527341768, 77.32358086816573],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_5ac72edbb2a6467f33d1b14a74019b36 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f9d4e04530763e1fba2cb0969b5b5c3c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_306bc832a3c9746c07b73e686aadb190 = $(`<div id="html_306bc832a3c9746c07b73e686aadb190" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_f9d4e04530763e1fba2cb0969b5b5c3c.setContent(html_306bc832a3c9746c07b73e686aadb190);
+            
+        
+
+        marker_81536e82bdd8eb58c026cf320393c8c1.bindPopup(popup_f9d4e04530763e1fba2cb0969b5b5c3c)
+        ;
+
+        
+    
+    
+            marker_81536e82bdd8eb58c026cf320393c8c1.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_81536e82bdd8eb58c026cf320393c8c1.setIcon(icon_5ac72edbb2a6467f33d1b14a74019b36);
+            
+    
+            var marker_9b7308e2886db460aecc39522597db3f = L.marker(
+                [20.53203884813833, 77.32309918559558],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_1d056e3182005d5313bef35369d51f7a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3934fe663b3dd42efa713ee20ce507db = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f01ba4b0027f30b90ac6a1ea9e189964 = $(`<div id="html_f01ba4b0027f30b90ac6a1ea9e189964" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_3934fe663b3dd42efa713ee20ce507db.setContent(html_f01ba4b0027f30b90ac6a1ea9e189964);
+            
+        
+
+        marker_9b7308e2886db460aecc39522597db3f.bindPopup(popup_3934fe663b3dd42efa713ee20ce507db)
+        ;
+
+        
+    
+    
+            marker_9b7308e2886db460aecc39522597db3f.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9b7308e2886db460aecc39522597db3f.setIcon(icon_1d056e3182005d5313bef35369d51f7a);
+            
+    
+            var marker_94f279e5a5bb28bd8e228baf5f76f378 = L.marker(
+                [20.531636530255685, 77.32277131772635],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_bb00879fa3f607266a810195e3f978b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eabf543f306b73cd612eb7e69602f48b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3e7c75014aa018c27c47284e09dc78f9 = $(`<div id="html_3e7c75014aa018c27c47284e09dc78f9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_eabf543f306b73cd612eb7e69602f48b.setContent(html_3e7c75014aa018c27c47284e09dc78f9);
+            
+        
+
+        marker_94f279e5a5bb28bd8e228baf5f76f378.bindPopup(popup_eabf543f306b73cd612eb7e69602f48b)
+        ;
+
+        
+    
+    
+            marker_94f279e5a5bb28bd8e228baf5f76f378.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_94f279e5a5bb28bd8e228baf5f76f378.setIcon(icon_bb00879fa3f607266a810195e3f978b9);
+            
+    
+            var marker_64895b680f060d1e3cccc054a28190d0 = L.marker(
+                [20.531909832376982, 77.32311298168808],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_d0ed8d041428a20d4bd69bf32d301aa7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_dfccb1f82ac4473034d3656bd148d34c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_81cfcdc3d50bbb7a234d2d7e310be536 = $(`<div id="html_81cfcdc3d50bbb7a234d2d7e310be536" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_dfccb1f82ac4473034d3656bd148d34c.setContent(html_81cfcdc3d50bbb7a234d2d7e310be536);
+            
+        
+
+        marker_64895b680f060d1e3cccc054a28190d0.bindPopup(popup_dfccb1f82ac4473034d3656bd148d34c)
+        ;
+
+        
+    
+    
+            marker_64895b680f060d1e3cccc054a28190d0.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_64895b680f060d1e3cccc054a28190d0.setIcon(icon_d0ed8d041428a20d4bd69bf32d301aa7);
+            
+    
+            var marker_08420cce1543f7486b00670b23b1019a = L.marker(
+                [20.53184933715648, 77.32231762541944],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_0ad345f9d4d7957e750341d58fc8bd3a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04015899362c4fc29c8281fb7286acf9 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8f68cc0bf49bf24668ac87c0f0e233da = $(`<div id="html_8f68cc0bf49bf24668ac87c0f0e233da" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.8<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.0<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.18<br>         OC: 1.57 | N: 140.0<br>         P: 24.1 | K: 458.3     </div>     </div>`)[0];
+                popup_04015899362c4fc29c8281fb7286acf9.setContent(html_8f68cc0bf49bf24668ac87c0f0e233da);
+            
+        
+
+        marker_08420cce1543f7486b00670b23b1019a.bindPopup(popup_04015899362c4fc29c8281fb7286acf9)
+        ;
+
+        
+    
+    
+            marker_08420cce1543f7486b00670b23b1019a.bindTooltip(
+                `<div>
+                     Para Bhawani — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_08420cce1543f7486b00670b23b1019a.setIcon(icon_0ad345f9d4d7957e750341d58fc8bd3a);
+            
+    
+            var marker_5ee9c0f8441310b617f24c29b5af1fd0 = L.marker(
+                [20.531941385242177, 77.32362768289855],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_087e490bd4bd4f3ff37876c09417d978 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1eaafab75b644a510c36eb1e0e9b49e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_8640c9f1d6058ca324348a1033221b2a = $(`<div id="html_8640c9f1d6058ca324348a1033221b2a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.8<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.0<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.18<br>         OC: 1.57 | N: 140.0<br>         P: 24.1 | K: 458.3     </div>     </div>`)[0];
+                popup_e1eaafab75b644a510c36eb1e0e9b49e.setContent(html_8640c9f1d6058ca324348a1033221b2a);
+            
+        
+
+        marker_5ee9c0f8441310b617f24c29b5af1fd0.bindPopup(popup_e1eaafab75b644a510c36eb1e0e9b49e)
+        ;
+
+        
+    
+    
+            marker_5ee9c0f8441310b617f24c29b5af1fd0.bindTooltip(
+                `<div>
+                     Para Bhawani — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5ee9c0f8441310b617f24c29b5af1fd0.setIcon(icon_087e490bd4bd4f3ff37876c09417d978);
+            
+    
+            var marker_e7a241c9a71fdb6c883439e27327053a = L.marker(
+                [20.531149822049596, 77.32296092481172],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_c6b4f765a097d86da45de5c3f90f08ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_613f314950515db737eef1554906509c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_583eec1a1c3c6f40f70a37d6eb4023be = $(`<div id="html_583eec1a1c3c6f40f70a37d6eb4023be" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_613f314950515db737eef1554906509c.setContent(html_583eec1a1c3c6f40f70a37d6eb4023be);
+            
+        
+
+        marker_e7a241c9a71fdb6c883439e27327053a.bindPopup(popup_613f314950515db737eef1554906509c)
+        ;
+
+        
+    
+    
+            marker_e7a241c9a71fdb6c883439e27327053a.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e7a241c9a71fdb6c883439e27327053a.setIcon(icon_c6b4f765a097d86da45de5c3f90f08ca);
+            
+    
+            var marker_64f825f59a7683c6eb66a42a811548dd = L.marker(
+                [20.531613730363038, 77.32338152931816],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_0fdfa4ad57407b5fc73904fbdcaa1abf = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62781725ca24e8dc9a90d306ba4bb544 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6defaf6d586710270a239881fb80f2dd = $(`<div id="html_6defaf6d586710270a239881fb80f2dd" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 48.5<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 50.0<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.0 | EC: 0.05<br>         OC: 2.47 | N: 124.1<br>         P: 8.6 | K: 575.6     </div>     </div>`)[0];
+                popup_62781725ca24e8dc9a90d306ba4bb544.setContent(html_6defaf6d586710270a239881fb80f2dd);
+            
+        
+
+        marker_64f825f59a7683c6eb66a42a811548dd.bindPopup(popup_62781725ca24e8dc9a90d306ba4bb544)
+        ;
+
+        
+    
+    
+            marker_64f825f59a7683c6eb66a42a811548dd.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_64f825f59a7683c6eb66a42a811548dd.setIcon(icon_0fdfa4ad57407b5fc73904fbdcaa1abf);
+            
+    
+            var marker_0610f0315f18714ebcfc88c272999738 = L.marker(
+                [20.53108985984341, 77.3224015219999],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_48d42dd4e76d389601aaa3a680f1d473 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2a15fa13f6a14e75afecf72375292a1c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_045f6f2ea4d27fd177a630ff0205ef16 = $(`<div id="html_045f6f2ea4d27fd177a630ff0205ef16" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.8<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.0<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.18<br>         OC: 1.57 | N: 140.0<br>         P: 24.1 | K: 458.3     </div>     </div>`)[0];
+                popup_2a15fa13f6a14e75afecf72375292a1c.setContent(html_045f6f2ea4d27fd177a630ff0205ef16);
+            
+        
+
+        marker_0610f0315f18714ebcfc88c272999738.bindPopup(popup_2a15fa13f6a14e75afecf72375292a1c)
+        ;
+
+        
+    
+    
+            marker_0610f0315f18714ebcfc88c272999738.bindTooltip(
+                `<div>
+                     Para Bhawani — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0610f0315f18714ebcfc88c272999738.setIcon(icon_48d42dd4e76d389601aaa3a680f1d473);
+            
+    
+            var marker_e11a7855988005b64a34fd160f28b7f3 = L.marker(
+                [20.531723187146945, 77.32296702166317],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_194d3330ab5b6c45909cfa56e08b7c00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8a76f1854845ac2c0bb02afb153ce342 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_96f78c7bfbdbcf344563e339cf60145d = $(`<div id="html_96f78c7bfbdbcf344563e339cf60145d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 53.75<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 57.5<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.2 | EC: 0.06<br>         OC: 1.31 | N: 70.3<br>         P: 7.3 | K: 375.9     </div>     </div>`)[0];
+                popup_8a76f1854845ac2c0bb02afb153ce342.setContent(html_96f78c7bfbdbcf344563e339cf60145d);
+            
+        
+
+        marker_e11a7855988005b64a34fd160f28b7f3.bindPopup(popup_8a76f1854845ac2c0bb02afb153ce342)
+        ;
+
+        
+    
+    
+            marker_e11a7855988005b64a34fd160f28b7f3.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e11a7855988005b64a34fd160f28b7f3.setIcon(icon_194d3330ab5b6c45909cfa56e08b7c00);
+            
+    
+            var marker_dd11f805a5f2e6380a85b2141fb52e1f = L.marker(
+                [20.531493405697265, 77.3229726897921],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_ba5f614bcd5f6308312f2c6ce35e0ba6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_eb0d687eeed1215f2dfe587b306c6d8a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0b4e14034b06a4534ed6460cadf513b7 = $(`<div id="html_0b4e14034b06a4534ed6460cadf513b7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 52.84<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 47.63<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.4 | EC: 0.09<br>         OC: 1.95 | N: 132.2<br>         P: 13.8 | K: 752.6     </div>     </div>`)[0];
+                popup_eb0d687eeed1215f2dfe587b306c6d8a.setContent(html_0b4e14034b06a4534ed6460cadf513b7);
+            
+        
+
+        marker_dd11f805a5f2e6380a85b2141fb52e1f.bindPopup(popup_eb0d687eeed1215f2dfe587b306c6d8a)
+        ;
+
+        
+    
+    
+            marker_dd11f805a5f2e6380a85b2141fb52e1f.bindTooltip(
+                `<div>
+                     Para Bhawani — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dd11f805a5f2e6380a85b2141fb52e1f.setIcon(icon_ba5f614bcd5f6308312f2c6ce35e0ba6);
+            
+    
+            var marker_452de38918fe4d3b7917eb05e761ec8d = L.marker(
+                [20.531233933864414, 77.32359865703697],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_4301ebbea5a0ef3985621fad1c45311e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e418a7efae7a73fd4e0f337beaa9cd24 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b3c8c68ba9702a96ac47747fd55878ad = $(`<div id="html_b3c8c68ba9702a96ac47747fd55878ad" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.8<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.0<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.18<br>         OC: 1.57 | N: 140.0<br>         P: 24.1 | K: 458.3     </div>     </div>`)[0];
+                popup_e418a7efae7a73fd4e0f337beaa9cd24.setContent(html_b3c8c68ba9702a96ac47747fd55878ad);
+            
+        
+
+        marker_452de38918fe4d3b7917eb05e761ec8d.bindPopup(popup_e418a7efae7a73fd4e0f337beaa9cd24)
+        ;
+
+        
+    
+    
+            marker_452de38918fe4d3b7917eb05e761ec8d.bindTooltip(
+                `<div>
+                     Para Bhawani — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_452de38918fe4d3b7917eb05e761ec8d.setIcon(icon_4301ebbea5a0ef3985621fad1c45311e);
+            
+    
+            var marker_c7378a69f11499e984d4ff4d12b84bab = L.marker(
+                [20.531176364154813, 77.32308611927333],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_eedb87a1edb021130859fa71a7160fc3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_edcdde5f13582823442a3b8b48204852 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_22b6e26ac75388e137f02dfe0598423f = $(`<div id="html_22b6e26ac75388e137f02dfe0598423f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Para Bhawani</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.8<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.0<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.18<br>         OC: 1.57 | N: 140.0<br>         P: 24.1 | K: 458.3     </div>     </div>`)[0];
+                popup_edcdde5f13582823442a3b8b48204852.setContent(html_22b6e26ac75388e137f02dfe0598423f);
+            
+        
+
+        marker_c7378a69f11499e984d4ff4d12b84bab.bindPopup(popup_edcdde5f13582823442a3b8b48204852)
+        ;
+
+        
+    
+    
+            marker_c7378a69f11499e984d4ff4d12b84bab.bindTooltip(
+                `<div>
+                     Para Bhawani — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7378a69f11499e984d4ff4d12b84bab.setIcon(icon_eedb87a1edb021130859fa71a7160fc3);
+            
+    
+            var marker_34f97c68823ad9813764df46f27e5349 = L.marker(
+                [20.54239448516148, 77.30582312508058],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_866db7ad78b28d9f12479784fdaf34a5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7ca9c89d0aa7403cfe9c31545163e525 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b2a122a12b3dbd8e7896a0f7b9563287 = $(`<div id="html_b2a122a12b3dbd8e7896a0f7b9563287" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dharagiri</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 62.67<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 70.25<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.6 | EC: 0.14<br>         OC: 0.94 | N: 125.6<br>         P: 15.2 | K: 319.4     </div>     </div>`)[0];
+                popup_7ca9c89d0aa7403cfe9c31545163e525.setContent(html_b2a122a12b3dbd8e7896a0f7b9563287);
+            
+        
+
+        marker_34f97c68823ad9813764df46f27e5349.bindPopup(popup_7ca9c89d0aa7403cfe9c31545163e525)
+        ;
+
+        
+    
+    
+            marker_34f97c68823ad9813764df46f27e5349.bindTooltip(
+                `<div>
+                     Dharagiri — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_34f97c68823ad9813764df46f27e5349.setIcon(icon_866db7ad78b28d9f12479784fdaf34a5);
+            
+    
+            var marker_c48540cd47a859d8469d4d06ca8140d4 = L.marker(
+                [20.54210536592833, 77.30476484872459],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_587c81de99ac4f55d97ab569f808c589 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7eae11bb66f9c519dabdf80590286144 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_94e99904070f7bd130655730fedea71d = $(`<div id="html_94e99904070f7bd130655730fedea71d" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dharagiri</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_7eae11bb66f9c519dabdf80590286144.setContent(html_94e99904070f7bd130655730fedea71d);
+            
+        
+
+        marker_c48540cd47a859d8469d4d06ca8140d4.bindPopup(popup_7eae11bb66f9c519dabdf80590286144)
+        ;
+
+        
+    
+    
+            marker_c48540cd47a859d8469d4d06ca8140d4.bindTooltip(
+                `<div>
+                     Dharagiri — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c48540cd47a859d8469d4d06ca8140d4.setIcon(icon_587c81de99ac4f55d97ab569f808c589);
+            
+    
+            var marker_51ca673f972092fb481b87ac964fb69b = L.marker(
+                [20.54219579659628, 77.30534415060094],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_e12ddfb95d0286b8bb9173fb402bc6a1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_56da800a0c4d60c1d59d29b4f56a5b00 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f3d44c3c43b933224f2fcd1f92e7dff2 = $(`<div id="html_f3d44c3c43b933224f2fcd1f92e7dff2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dharagiri</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_56da800a0c4d60c1d59d29b4f56a5b00.setContent(html_f3d44c3c43b933224f2fcd1f92e7dff2);
+            
+        
+
+        marker_51ca673f972092fb481b87ac964fb69b.bindPopup(popup_56da800a0c4d60c1d59d29b4f56a5b00)
+        ;
+
+        
+    
+    
+            marker_51ca673f972092fb481b87ac964fb69b.bindTooltip(
+                `<div>
+                     Dharagiri — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_51ca673f972092fb481b87ac964fb69b.setIcon(icon_e12ddfb95d0286b8bb9173fb402bc6a1);
+            
+    
+            var marker_c56aea884045ae2905c2133a27f47bc5 = L.marker(
+                [20.54246054136346, 77.30472050603758],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_a743337912d25c0abcdd6c3c992a9f65 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_12270007bdbc9f03958e832ec7ea7afa = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_27d34af4456afaa90a2e2df8e40ad310 = $(`<div id="html_27d34af4456afaa90a2e2df8e40ad310" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dharagiri</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_12270007bdbc9f03958e832ec7ea7afa.setContent(html_27d34af4456afaa90a2e2df8e40ad310);
+            
+        
+
+        marker_c56aea884045ae2905c2133a27f47bc5.bindPopup(popup_12270007bdbc9f03958e832ec7ea7afa)
+        ;
+
+        
+    
+    
+            marker_c56aea884045ae2905c2133a27f47bc5.bindTooltip(
+                `<div>
+                     Dharagiri — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c56aea884045ae2905c2133a27f47bc5.setIcon(icon_a743337912d25c0abcdd6c3c992a9f65);
+            
+    
+            var marker_a688f6cc6e1bf7fd915ec75bd205ebf6 = L.marker(
+                [20.542346076044428, 77.30550963613025],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_00bb70902a7f11c97c00b26314286209 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a9bfb327983bb8ea18ae9da50745654e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7b7c63cdeacf65304f859de0221e8f76 = $(`<div id="html_7b7c63cdeacf65304f859de0221e8f76" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dharagiri</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.8<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.0<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.18<br>         OC: 1.57 | N: 140.0<br>         P: 24.1 | K: 458.3     </div>     </div>`)[0];
+                popup_a9bfb327983bb8ea18ae9da50745654e.setContent(html_7b7c63cdeacf65304f859de0221e8f76);
+            
+        
+
+        marker_a688f6cc6e1bf7fd915ec75bd205ebf6.bindPopup(popup_a9bfb327983bb8ea18ae9da50745654e)
+        ;
+
+        
+    
+    
+            marker_a688f6cc6e1bf7fd915ec75bd205ebf6.bindTooltip(
+                `<div>
+                     Dharagiri — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a688f6cc6e1bf7fd915ec75bd205ebf6.setIcon(icon_00bb70902a7f11c97c00b26314286209);
+            
+    
+            var marker_b70d3d24722d2836bb86308e6bb7a46e = L.marker(
+                [20.541761856911833, 77.30496222729737],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_6b80f46c06fd82d84c3b02115148dd98 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9b80ea1342a55fc6ad9c28908b00f6d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2882c3104b8a0aaf417de304c162be6 = $(`<div id="html_d2882c3104b8a0aaf417de304c162be6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dharagiri</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.8<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.0<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.18<br>         OC: 1.57 | N: 140.0<br>         P: 24.1 | K: 458.3     </div>     </div>`)[0];
+                popup_9b80ea1342a55fc6ad9c28908b00f6d4.setContent(html_d2882c3104b8a0aaf417de304c162be6);
+            
+        
+
+        marker_b70d3d24722d2836bb86308e6bb7a46e.bindPopup(popup_9b80ea1342a55fc6ad9c28908b00f6d4)
+        ;
+
+        
+    
+    
+            marker_b70d3d24722d2836bb86308e6bb7a46e.bindTooltip(
+                `<div>
+                     Dharagiri — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b70d3d24722d2836bb86308e6bb7a46e.setIcon(icon_6b80f46c06fd82d84c3b02115148dd98);
+            
+    
+            var marker_83db3c83c8dbb85efd3f9109865f41e9 = L.marker(
+                [20.542888408693873, 77.30549169168856],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_92b537467f1a2503377571deab577160 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3cf1a82632ef3ae1e2a642fe74e4fda1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_993030edb49c3058de073281038c5782 = $(`<div id="html_993030edb49c3058de073281038c5782" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dharagiri</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 63.0<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 70.72<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.4 | EC: 0.14<br>         OC: 1.73 | N: 170.6<br>         P: 13.3 | K: 354.7     </div>     </div>`)[0];
+                popup_3cf1a82632ef3ae1e2a642fe74e4fda1.setContent(html_993030edb49c3058de073281038c5782);
+            
+        
+
+        marker_83db3c83c8dbb85efd3f9109865f41e9.bindPopup(popup_3cf1a82632ef3ae1e2a642fe74e4fda1)
+        ;
+
+        
+    
+    
+            marker_83db3c83c8dbb85efd3f9109865f41e9.bindTooltip(
+                `<div>
+                     Dharagiri — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_83db3c83c8dbb85efd3f9109865f41e9.setIcon(icon_92b537467f1a2503377571deab577160);
+            
+    
+            var marker_97bd526d63cb7de8d9416bcba27bddde = L.marker(
+                [20.516879351265555, 77.33903654335516],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_33041155b94b00a473c60101b76b75dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c9826a81043e236830cf6d4c6cf2a95b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bde219f0e2d9b9914bc2f8455cc1a4c0 = $(`<div id="html_bde219f0e2d9b9914bc2f8455cc1a4c0" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Kasarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_c9826a81043e236830cf6d4c6cf2a95b.setContent(html_bde219f0e2d9b9914bc2f8455cc1a4c0);
+            
+        
+
+        marker_97bd526d63cb7de8d9416bcba27bddde.bindPopup(popup_c9826a81043e236830cf6d4c6cf2a95b)
+        ;
+
+        
+    
+    
+            marker_97bd526d63cb7de8d9416bcba27bddde.bindTooltip(
+                `<div>
+                     Kasarkhed — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_97bd526d63cb7de8d9416bcba27bddde.setIcon(icon_33041155b94b00a473c60101b76b75dc);
+            
+    
+            var marker_4bc275bae97105f0b7ebbef6c51d776c = L.marker(
+                [20.516792746264823, 77.33841098680577],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_7603fe8f2decd72bb5eb3601a96e3632 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_961c67eab00cfc0a957be9f12e9c401b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_601d7f8ddada28b95fecfeba71252f5a = $(`<div id="html_601d7f8ddada28b95fecfeba71252f5a" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Kasarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_961c67eab00cfc0a957be9f12e9c401b.setContent(html_601d7f8ddada28b95fecfeba71252f5a);
+            
+        
+
+        marker_4bc275bae97105f0b7ebbef6c51d776c.bindPopup(popup_961c67eab00cfc0a957be9f12e9c401b)
+        ;
+
+        
+    
+    
+            marker_4bc275bae97105f0b7ebbef6c51d776c.bindTooltip(
+                `<div>
+                     Kasarkhed — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4bc275bae97105f0b7ebbef6c51d776c.setIcon(icon_7603fe8f2decd72bb5eb3601a96e3632);
+            
+    
+            var marker_aa95ab06d67fe5f20e400c970c5ee11e = L.marker(
+                [20.516418206103, 77.33805620871071],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_2c6e33d9d17af057247a41137d04c140 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b184192433d9bc03322beda256e3d87f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_63ade8a886503c79da373475439159a5 = $(`<div id="html_63ade8a886503c79da373475439159a5" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Kasarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_b184192433d9bc03322beda256e3d87f.setContent(html_63ade8a886503c79da373475439159a5);
+            
+        
+
+        marker_aa95ab06d67fe5f20e400c970c5ee11e.bindPopup(popup_b184192433d9bc03322beda256e3d87f)
+        ;
+
+        
+    
+    
+            marker_aa95ab06d67fe5f20e400c970c5ee11e.bindTooltip(
+                `<div>
+                     Kasarkhed — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa95ab06d67fe5f20e400c970c5ee11e.setIcon(icon_2c6e33d9d17af057247a41137d04c140);
+            
+    
+            var marker_b664ae952b9fd03961672c42ea1d16bc = L.marker(
+                [20.516170238186586, 77.33820123927381],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_39bba7eb066fec460050ff3b6330d97a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f8397d60ebda24a1321f11c713484db = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fac5841c19d8d388c6b292950e8b44f6 = $(`<div id="html_fac5841c19d8d388c6b292950e8b44f6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Kasarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 62.56<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 61.51<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.12<br>         OC: 2.27 | N: 157.6<br>         P: 26.3 | K: 1248.6     </div>     </div>`)[0];
+                popup_4f8397d60ebda24a1321f11c713484db.setContent(html_fac5841c19d8d388c6b292950e8b44f6);
+            
+        
+
+        marker_b664ae952b9fd03961672c42ea1d16bc.bindPopup(popup_4f8397d60ebda24a1321f11c713484db)
+        ;
+
+        
+    
+    
+            marker_b664ae952b9fd03961672c42ea1d16bc.bindTooltip(
+                `<div>
+                     Kasarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b664ae952b9fd03961672c42ea1d16bc.setIcon(icon_39bba7eb066fec460050ff3b6330d97a);
+            
+    
+            var marker_eb687c5cbfe6e86e988e8b994f3f6ac9 = L.marker(
+                [20.515924047347017, 77.33858380739652],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_36d7d9137e1b87656297e3b923c6550a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c08e87b996c22b39a7b38121ce54bec5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d825baa6958246ad35d9b6ed087f6901 = $(`<div id="html_d825baa6958246ad35d9b6ed087f6901" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Kasarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 62.56<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 61.51<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.3 | EC: 0.12<br>         OC: 2.27 | N: 157.6<br>         P: 26.3 | K: 1248.6     </div>     </div>`)[0];
+                popup_c08e87b996c22b39a7b38121ce54bec5.setContent(html_d825baa6958246ad35d9b6ed087f6901);
+            
+        
+
+        marker_eb687c5cbfe6e86e988e8b994f3f6ac9.bindPopup(popup_c08e87b996c22b39a7b38121ce54bec5)
+        ;
+
+        
+    
+    
+            marker_eb687c5cbfe6e86e988e8b994f3f6ac9.bindTooltip(
+                `<div>
+                     Kasarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eb687c5cbfe6e86e988e8b994f3f6ac9.setIcon(icon_36d7d9137e1b87656297e3b923c6550a);
+            
+    
+            var marker_7dda6ad15285272873671a49f3fc2d74 = L.marker(
+                [20.502421423838364, 77.37644586268515],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_5b5477246f617a0b62dafba48ac78b03 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a701fb273f5619360d4917ba216217fb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5fc6958189b8c2ed4d59fe80980d2052 = $(`<div id="html_5fc6958189b8c2ed4d59fe80980d2052" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 59.27<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 56.81<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.7 | EC: 0.2<br>         OC: 2.1 | N: 98.2<br>         P: 17.2 | K: 1077.9     </div>     </div>`)[0];
+                popup_a701fb273f5619360d4917ba216217fb.setContent(html_5fc6958189b8c2ed4d59fe80980d2052);
+            
+        
+
+        marker_7dda6ad15285272873671a49f3fc2d74.bindPopup(popup_a701fb273f5619360d4917ba216217fb)
+        ;
+
+        
+    
+    
+            marker_7dda6ad15285272873671a49f3fc2d74.bindTooltip(
+                `<div>
+                     Morhal — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7dda6ad15285272873671a49f3fc2d74.setIcon(icon_5b5477246f617a0b62dafba48ac78b03);
+            
+    
+            var marker_8dacea49f8eda40f56f0f96f588d9432 = L.marker(
+                [20.502733737448832, 77.3759576369438],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_139a6aaf20fdf167476b6780c05b1bbe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_398bdc89bc2584a32105909a046b32cd = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1da6dfe98e08ec1581d37b94ba0a50f4 = $(`<div id="html_1da6dfe98e08ec1581d37b94ba0a50f4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.71<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 67.45<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.1 | EC: 0.12<br>         OC: 0.73 | N: 163.5<br>         P: 35.0 | K: 546.6     </div>     </div>`)[0];
+                popup_398bdc89bc2584a32105909a046b32cd.setContent(html_1da6dfe98e08ec1581d37b94ba0a50f4);
+            
+        
+
+        marker_8dacea49f8eda40f56f0f96f588d9432.bindPopup(popup_398bdc89bc2584a32105909a046b32cd)
+        ;
+
+        
+    
+    
+            marker_8dacea49f8eda40f56f0f96f588d9432.bindTooltip(
+                `<div>
+                     Morhal — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8dacea49f8eda40f56f0f96f588d9432.setIcon(icon_139a6aaf20fdf167476b6780c05b1bbe);
+            
+    
+            var marker_6d5337be09c0667a12b75ef17b3f9303 = L.marker(
+                [20.502750831260872, 77.3767192485251],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_9205de43c212337419be8e18101bc3bd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c32712d098d2a3e974feb4e482fa192 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c05d7cfcbfc10c8bc4deda3ad92b8490 = $(`<div id="html_c05d7cfcbfc10c8bc4deda3ad92b8490" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_4c32712d098d2a3e974feb4e482fa192.setContent(html_c05d7cfcbfc10c8bc4deda3ad92b8490);
+            
+        
+
+        marker_6d5337be09c0667a12b75ef17b3f9303.bindPopup(popup_4c32712d098d2a3e974feb4e482fa192)
+        ;
+
+        
+    
+    
+            marker_6d5337be09c0667a12b75ef17b3f9303.bindTooltip(
+                `<div>
+                     Morhal — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6d5337be09c0667a12b75ef17b3f9303.setIcon(icon_9205de43c212337419be8e18101bc3bd);
+            
+    
+            var marker_82959a1f487d8f40dfa6ed8327d8ebbd = L.marker(
+                [20.50326648312062, 77.3763690187858],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_8bce8c67dd1f782c46b0ba66e9510ef7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3a6302511810831c54ffdbfaa775f1b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4f0df7c47a8fe4aab8194215f299e4a8 = $(`<div id="html_4f0df7c47a8fe4aab8194215f299e4a8" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_b3a6302511810831c54ffdbfaa775f1b.setContent(html_4f0df7c47a8fe4aab8194215f299e4a8);
+            
+        
+
+        marker_82959a1f487d8f40dfa6ed8327d8ebbd.bindPopup(popup_b3a6302511810831c54ffdbfaa775f1b)
+        ;
+
+        
+    
+    
+            marker_82959a1f487d8f40dfa6ed8327d8ebbd.bindTooltip(
+                `<div>
+                     Morhal — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_82959a1f487d8f40dfa6ed8327d8ebbd.setIcon(icon_8bce8c67dd1f782c46b0ba66e9510ef7);
+            
+    
+            var marker_dfa74e8311e6b2f4a97aa6caa5a3d75a = L.marker(
+                [20.503119645013278, 77.37627782971653],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_f5f69af68d1de40c14cf85976772090b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2156f8290991bfa59d4b5339b38654f0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_7fcd6e1ed3df2ad50550a6eca974f7a4 = $(`<div id="html_7fcd6e1ed3df2ad50550a6eca974f7a4" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_2156f8290991bfa59d4b5339b38654f0.setContent(html_7fcd6e1ed3df2ad50550a6eca974f7a4);
+            
+        
+
+        marker_dfa74e8311e6b2f4a97aa6caa5a3d75a.bindPopup(popup_2156f8290991bfa59d4b5339b38654f0)
+        ;
+
+        
+    
+    
+            marker_dfa74e8311e6b2f4a97aa6caa5a3d75a.bindTooltip(
+                `<div>
+                     Morhal — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dfa74e8311e6b2f4a97aa6caa5a3d75a.setIcon(icon_f5f69af68d1de40c14cf85976772090b);
+            
+    
+            var marker_2217e2fce00b70955498a10ced8fd094 = L.marker(
+                [20.50343725749275, 77.3761665169248],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_92fe39c6ab42df458d1ca2cb8b0d70bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_619f46f955013bd9fc19748a2f78be4d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2333e9c1b6aaca7442bbf1664d4de1e = $(`<div id="html_d2333e9c1b6aaca7442bbf1664d4de1e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_619f46f955013bd9fc19748a2f78be4d.setContent(html_d2333e9c1b6aaca7442bbf1664d4de1e);
+            
+        
+
+        marker_2217e2fce00b70955498a10ced8fd094.bindPopup(popup_619f46f955013bd9fc19748a2f78be4d)
+        ;
+
+        
+    
+    
+            marker_2217e2fce00b70955498a10ced8fd094.bindTooltip(
+                `<div>
+                     Morhal — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2217e2fce00b70955498a10ced8fd094.setIcon(icon_92fe39c6ab42df458d1ca2cb8b0d70bc);
+            
+    
+            var marker_97ed9b58e4a49dc28f8dffb520d1d435 = L.marker(
+                [20.50326983895646, 77.37662679563036],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_d579e3bcda94c9a136d7850a72713ac3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_da2c5c89f7bd92b2cbacd6eb11918a5d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_cbd3c3a41e05a80228352b04c2154878 = $(`<div id="html_cbd3c3a41e05a80228352b04c2154878" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 57.69<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 54.56<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.0 | EC: 0.13<br>         OC: 0.81 | N: 119.7<br>         P: 17.2 | K: 497.8     </div>     </div>`)[0];
+                popup_da2c5c89f7bd92b2cbacd6eb11918a5d.setContent(html_cbd3c3a41e05a80228352b04c2154878);
+            
+        
+
+        marker_97ed9b58e4a49dc28f8dffb520d1d435.bindPopup(popup_da2c5c89f7bd92b2cbacd6eb11918a5d)
+        ;
+
+        
+    
+    
+            marker_97ed9b58e4a49dc28f8dffb520d1d435.bindTooltip(
+                `<div>
+                     Morhal — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_97ed9b58e4a49dc28f8dffb520d1d435.setIcon(icon_d579e3bcda94c9a136d7850a72713ac3);
+            
+    
+            var marker_10ac069797ac37af5758d4723d56d11d = L.marker(
+                [20.502908741606017, 77.37625093765477],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_e240a2fa47e87790ec3e876a2f67ad46 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_afcf21c8ac1ed8f28f4ea997d21797a2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d283e8323d47a0cf05533e0eaad27191 = $(`<div id="html_d283e8323d47a0cf05533e0eaad27191" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 59.46<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 65.66<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.5 | EC: 0.09<br>         OC: 0.8 | N: 144.6<br>         P: 23.3 | K: 707.5     </div>     </div>`)[0];
+                popup_afcf21c8ac1ed8f28f4ea997d21797a2.setContent(html_d283e8323d47a0cf05533e0eaad27191);
+            
+        
+
+        marker_10ac069797ac37af5758d4723d56d11d.bindPopup(popup_afcf21c8ac1ed8f28f4ea997d21797a2)
+        ;
+
+        
+    
+    
+            marker_10ac069797ac37af5758d4723d56d11d.bindTooltip(
+                `<div>
+                     Morhal — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10ac069797ac37af5758d4723d56d11d.setIcon(icon_e240a2fa47e87790ec3e876a2f67ad46);
+            
+    
+            var marker_0672842ea12bb721eff36eb8db5b9e00 = L.marker(
+                [20.502584090025046, 77.34502631854194],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_3da9d408398371a60cc0902537fe63e7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99f53cb5ddf9bbd848ab63661197b86f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b02395a0afa373550d8fb17f9e3cb545 = $(`<div id="html_b02395a0afa373550d8fb17f9e3cb545" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Chinchkhed Bk.</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 65.81<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 66.16<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.9 | EC: 0.18<br>         OC: 1.41 | N: 169.1<br>         P: 30.8 | K: 2337.8     </div>     </div>`)[0];
+                popup_99f53cb5ddf9bbd848ab63661197b86f.setContent(html_b02395a0afa373550d8fb17f9e3cb545);
+            
+        
+
+        marker_0672842ea12bb721eff36eb8db5b9e00.bindPopup(popup_99f53cb5ddf9bbd848ab63661197b86f)
+        ;
+
+        
+    
+    
+            marker_0672842ea12bb721eff36eb8db5b9e00.bindTooltip(
+                `<div>
+                     Chinchkhed Bk. — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0672842ea12bb721eff36eb8db5b9e00.setIcon(icon_3da9d408398371a60cc0902537fe63e7);
+            
+    
+            var marker_ce18e1c88c5722729f050675172dc93b = L.marker(
+                [20.502226730137288, 77.34529784010121],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_acdd793bce8bd161111a7c3c4da5baa7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9238e5b0981a1af248712dc8eac47e38 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4d2e017504da00c48bed1183be4f5af9 = $(`<div id="html_4d2e017504da00c48bed1183be4f5af9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Chinchkhed Bk.</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_9238e5b0981a1af248712dc8eac47e38.setContent(html_4d2e017504da00c48bed1183be4f5af9);
+            
+        
+
+        marker_ce18e1c88c5722729f050675172dc93b.bindPopup(popup_9238e5b0981a1af248712dc8eac47e38)
+        ;
+
+        
+    
+    
+            marker_ce18e1c88c5722729f050675172dc93b.bindTooltip(
+                `<div>
+                     Chinchkhed Bk. — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ce18e1c88c5722729f050675172dc93b.setIcon(icon_acdd793bce8bd161111a7c3c4da5baa7);
+            
+    
+            var marker_6c043d106d03ada9713eb24320c20972 = L.marker(
+                [20.501844344968397, 77.34592066430257],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_8a7d8b75b5f8431df7c393c712607b70 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f1928309b03aede8ba2e2a690c79bca5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c24fee33449c19264026fefdf62ca228 = $(`<div id="html_c24fee33449c19264026fefdf62ca228" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Chinchkhed Bk.</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 57.8<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 63.29<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.09<br>         OC: 0.98 | N: 143.8<br>         P: 39.7 | K: 509.0     </div>     </div>`)[0];
+                popup_f1928309b03aede8ba2e2a690c79bca5.setContent(html_c24fee33449c19264026fefdf62ca228);
+            
+        
+
+        marker_6c043d106d03ada9713eb24320c20972.bindPopup(popup_f1928309b03aede8ba2e2a690c79bca5)
+        ;
+
+        
+    
+    
+            marker_6c043d106d03ada9713eb24320c20972.bindTooltip(
+                `<div>
+                     Chinchkhed Bk. — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6c043d106d03ada9713eb24320c20972.setIcon(icon_8a7d8b75b5f8431df7c393c712607b70);
+            
+    
+            var marker_773687671dd548602fd39e8d252dafb5 = L.marker(
+                [20.469198605288895, 77.3204209593455],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_ff679317d01c49e6d3037c040ad05530 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fe7bbc56bde34d687b61b40b2c926699 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_18786a2d2efb456c13dd335c99c10fd6 = $(`<div id="html_18786a2d2efb456c13dd335c99c10fd6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_fe7bbc56bde34d687b61b40b2c926699.setContent(html_18786a2d2efb456c13dd335c99c10fd6);
+            
+        
+
+        marker_773687671dd548602fd39e8d252dafb5.bindPopup(popup_fe7bbc56bde34d687b61b40b2c926699)
+        ;
+
+        
+    
+    
+            marker_773687671dd548602fd39e8d252dafb5.bindTooltip(
+                `<div>
+                     Dhakali — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_773687671dd548602fd39e8d252dafb5.setIcon(icon_ff679317d01c49e6d3037c040ad05530);
+            
+    
+            var marker_f5931380178138a2f5226a0e7243e689 = L.marker(
+                [20.469938868534538, 77.32097279370556],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_3e103c3470d6be09420f98c781b171f1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c388f1a5d11bcaceb7880aeda6dae195 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_94c1acf356eba6aa486a53beed386b3f = $(`<div id="html_94c1acf356eba6aa486a53beed386b3f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.88<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.11<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.21<br>         OC: 0.67 | N: 121.9<br>         P: 24.6 | K: 500.9     </div>     </div>`)[0];
+                popup_c388f1a5d11bcaceb7880aeda6dae195.setContent(html_94c1acf356eba6aa486a53beed386b3f);
+            
+        
+
+        marker_f5931380178138a2f5226a0e7243e689.bindPopup(popup_c388f1a5d11bcaceb7880aeda6dae195)
+        ;
+
+        
+    
+    
+            marker_f5931380178138a2f5226a0e7243e689.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f5931380178138a2f5226a0e7243e689.setIcon(icon_3e103c3470d6be09420f98c781b171f1);
+            
+    
+            var marker_26f4725b70a2922e20ce0aeaaf79896c = L.marker(
+                [20.47002526701827, 77.32021295347705],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_5101b3d98b4cefcae1d2ec69bcf8c56f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_62503e0bb042a52fcdc32a5b2732cee7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_30056ebbdc947e14ebae08ff92a5a5c9 = $(`<div id="html_30056ebbdc947e14ebae08ff92a5a5c9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 56.89<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 61.98<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.2 | EC: 0.11<br>         OC: 1.19 | N: 178.3<br>         P: 14.6 | K: 102.8     </div>     </div>`)[0];
+                popup_62503e0bb042a52fcdc32a5b2732cee7.setContent(html_30056ebbdc947e14ebae08ff92a5a5c9);
+            
+        
+
+        marker_26f4725b70a2922e20ce0aeaaf79896c.bindPopup(popup_62503e0bb042a52fcdc32a5b2732cee7)
+        ;
+
+        
+    
+    
+            marker_26f4725b70a2922e20ce0aeaaf79896c.bindTooltip(
+                `<div>
+                     Dhakali — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_26f4725b70a2922e20ce0aeaaf79896c.setIcon(icon_5101b3d98b4cefcae1d2ec69bcf8c56f);
+            
+    
+            var marker_827475d5d35f82062e08a5d0a75e48e8 = L.marker(
+                [20.470337113625405, 77.32029717148346],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_55753450c19015706361db6410380829 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a71fac96eb1fcc348e7362ac51e0fcb = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a4c2629e0ed36a4eb54b05286df86f76 = $(`<div id="html_a4c2629e0ed36a4eb54b05286df86f76" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_3a71fac96eb1fcc348e7362ac51e0fcb.setContent(html_a4c2629e0ed36a4eb54b05286df86f76);
+            
+        
+
+        marker_827475d5d35f82062e08a5d0a75e48e8.bindPopup(popup_3a71fac96eb1fcc348e7362ac51e0fcb)
+        ;
+
+        
+    
+    
+            marker_827475d5d35f82062e08a5d0a75e48e8.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_827475d5d35f82062e08a5d0a75e48e8.setIcon(icon_55753450c19015706361db6410380829);
+            
+    
+            var marker_80a3c498bbaf3ed8a1f8b68dddc701a0 = L.marker(
+                [20.469438755501393, 77.32002760717765],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_cdb674a54ea4adf47988b9cacf17d844 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0b33cd02e4b0e36651007df96cc9b197 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_e7a52a30ceaa014f20739d31022d2d15 = $(`<div id="html_e7a52a30ceaa014f20739d31022d2d15" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_0b33cd02e4b0e36651007df96cc9b197.setContent(html_e7a52a30ceaa014f20739d31022d2d15);
+            
+        
+
+        marker_80a3c498bbaf3ed8a1f8b68dddc701a0.bindPopup(popup_0b33cd02e4b0e36651007df96cc9b197)
+        ;
+
+        
+    
+    
+            marker_80a3c498bbaf3ed8a1f8b68dddc701a0.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_80a3c498bbaf3ed8a1f8b68dddc701a0.setIcon(icon_cdb674a54ea4adf47988b9cacf17d844);
+            
+    
+            var marker_898b4018f8f997eb515d339751d61f3a = L.marker(
+                [20.469501243588446, 77.3211189941285],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_e9b22e1dd30a8abf33acec149a53541e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c7055d65d1cdfffe5de6bc0a5916808f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_183ab53acc5bd78fa4242ed035fb2ecf = $(`<div id="html_183ab53acc5bd78fa4242ed035fb2ecf" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_c7055d65d1cdfffe5de6bc0a5916808f.setContent(html_183ab53acc5bd78fa4242ed035fb2ecf);
+            
+        
+
+        marker_898b4018f8f997eb515d339751d61f3a.bindPopup(popup_c7055d65d1cdfffe5de6bc0a5916808f)
+        ;
+
+        
+    
+    
+            marker_898b4018f8f997eb515d339751d61f3a.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_898b4018f8f997eb515d339751d61f3a.setIcon(icon_e9b22e1dd30a8abf33acec149a53541e);
+            
+    
+            var marker_bc5ebc232aafce3cb6080af38d79313f = L.marker(
+                [20.469639978135785, 77.32094809119923],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_88d7449672a0881523786d3487c20ba3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0072d1236dc0464765107e3cf9eb2fb6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_50c6347ab25021135288352ab7a52e10 = $(`<div id="html_50c6347ab25021135288352ab7a52e10" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_0072d1236dc0464765107e3cf9eb2fb6.setContent(html_50c6347ab25021135288352ab7a52e10);
+            
+        
+
+        marker_bc5ebc232aafce3cb6080af38d79313f.bindPopup(popup_0072d1236dc0464765107e3cf9eb2fb6)
+        ;
+
+        
+    
+    
+            marker_bc5ebc232aafce3cb6080af38d79313f.bindTooltip(
+                `<div>
+                     Dhakali — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc5ebc232aafce3cb6080af38d79313f.setIcon(icon_88d7449672a0881523786d3487c20ba3);
+            
+    
+            var marker_44e79014e953483a37bf61de67aa409f = L.marker(
+                [20.469247859902715, 77.32100453153008],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_df5b7d88383c7b3124458980127c2335 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_869a2997d743288f70cbf73876c7b8d3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dc16e5623c34c7c50822759c3b8bf333 = $(`<div id="html_dc16e5623c34c7c50822759c3b8bf333" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_869a2997d743288f70cbf73876c7b8d3.setContent(html_dc16e5623c34c7c50822759c3b8bf333);
+            
+        
+
+        marker_44e79014e953483a37bf61de67aa409f.bindPopup(popup_869a2997d743288f70cbf73876c7b8d3)
+        ;
+
+        
+    
+    
+            marker_44e79014e953483a37bf61de67aa409f.bindTooltip(
+                `<div>
+                     Dhakali — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_44e79014e953483a37bf61de67aa409f.setIcon(icon_df5b7d88383c7b3124458980127c2335);
+            
+    
+            var marker_de434cc778718933751614a89b21d6be = L.marker(
+                [20.469164490107467, 77.32111032064343],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_990cb9e8531e94494b3fb28a0ecdeb6b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cec2b08e35f4432f9d78664dcea434a8 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_bf6da7fac81334dfe8b83f0c30c26518 = $(`<div id="html_bf6da7fac81334dfe8b83f0c30c26518" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_cec2b08e35f4432f9d78664dcea434a8.setContent(html_bf6da7fac81334dfe8b83f0c30c26518);
+            
+        
+
+        marker_de434cc778718933751614a89b21d6be.bindPopup(popup_cec2b08e35f4432f9d78664dcea434a8)
+        ;
+
+        
+    
+    
+            marker_de434cc778718933751614a89b21d6be.bindTooltip(
+                `<div>
+                     Dhakali — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_de434cc778718933751614a89b21d6be.setIcon(icon_990cb9e8531e94494b3fb28a0ecdeb6b);
+            
+    
+            var marker_89b885c222281e04e7d3a20144c8ea7c = L.marker(
+                [20.469648586896714, 77.32065978208576],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_c888b4816469cf141168713ec735c2f6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_72c82565bd55fdbd07bbfd9ecea3801f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6888237bd30cd16094a5d6253f46fa6f = $(`<div id="html_6888237bd30cd16094a5d6253f46fa6f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 56.89<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 61.98<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.2 | EC: 0.11<br>         OC: 1.19 | N: 178.3<br>         P: 14.6 | K: 102.8     </div>     </div>`)[0];
+                popup_72c82565bd55fdbd07bbfd9ecea3801f.setContent(html_6888237bd30cd16094a5d6253f46fa6f);
+            
+        
+
+        marker_89b885c222281e04e7d3a20144c8ea7c.bindPopup(popup_72c82565bd55fdbd07bbfd9ecea3801f)
+        ;
+
+        
+    
+    
+            marker_89b885c222281e04e7d3a20144c8ea7c.bindTooltip(
+                `<div>
+                     Dhakali — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_89b885c222281e04e7d3a20144c8ea7c.setIcon(icon_c888b4816469cf141168713ec735c2f6);
+            
+    
+            var marker_32816f37253a033fdb9c52cf41e56bc0 = L.marker(
+                [20.46930027308867, 77.32081353767433],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_00427476dab82820d13baf47c4de8f72 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4f4a1ec431bec3313798a1533ba1cde4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_166a484b0cc96fd26ae37016dc1b58f6 = $(`<div id="html_166a484b0cc96fd26ae37016dc1b58f6" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_4f4a1ec431bec3313798a1533ba1cde4.setContent(html_166a484b0cc96fd26ae37016dc1b58f6);
+            
+        
+
+        marker_32816f37253a033fdb9c52cf41e56bc0.bindPopup(popup_4f4a1ec431bec3313798a1533ba1cde4)
+        ;
+
+        
+    
+    
+            marker_32816f37253a033fdb9c52cf41e56bc0.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_32816f37253a033fdb9c52cf41e56bc0.setIcon(icon_00427476dab82820d13baf47c4de8f72);
+            
+    
+            var marker_a60f50e11bd0a3820bc69f84692b0b98 = L.marker(
+                [20.469920339592555, 77.32021301579738],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_2a96e134faf981f1b06f86a15472fd93 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3ec2345de9d3c881114e6cf9c7e40fe7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aed2dc4ed63359fa915c899c4e1aafb1 = $(`<div id="html_aed2dc4ed63359fa915c899c4e1aafb1" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_3ec2345de9d3c881114e6cf9c7e40fe7.setContent(html_aed2dc4ed63359fa915c899c4e1aafb1);
+            
+        
+
+        marker_a60f50e11bd0a3820bc69f84692b0b98.bindPopup(popup_3ec2345de9d3c881114e6cf9c7e40fe7)
+        ;
+
+        
+    
+    
+            marker_a60f50e11bd0a3820bc69f84692b0b98.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a60f50e11bd0a3820bc69f84692b0b98.setIcon(icon_2a96e134faf981f1b06f86a15472fd93);
+            
+    
+            var marker_341046d07ed0c1ee4a9cad1747ea8a24 = L.marker(
+                [20.46959461268642, 77.32017764210295],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_c5c05582f985cd8bd117709a7c727489 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_719762dfad673af5a653a47e2bf3a36e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_4348ba93ce00539d2adcd6c183ad2120 = $(`<div id="html_4348ba93ce00539d2adcd6c183ad2120" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_719762dfad673af5a653a47e2bf3a36e.setContent(html_4348ba93ce00539d2adcd6c183ad2120);
+            
+        
+
+        marker_341046d07ed0c1ee4a9cad1747ea8a24.bindPopup(popup_719762dfad673af5a653a47e2bf3a36e)
+        ;
+
+        
+    
+    
+            marker_341046d07ed0c1ee4a9cad1747ea8a24.bindTooltip(
+                `<div>
+                     Dhakali — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_341046d07ed0c1ee4a9cad1747ea8a24.setIcon(icon_c5c05582f985cd8bd117709a7c727489);
+            
+    
+            var marker_fbc486b898549b56f281948459d31cdc = L.marker(
+                [20.47014834947448, 77.32095306414651],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_38dbc002eb47466a8ee8ccf6fd7e2527 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8749a7b3ed5e19b3bbe635e7c023e33c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_adfd214547606ec168ee746a85436096 = $(`<div id="html_adfd214547606ec168ee746a85436096" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_8749a7b3ed5e19b3bbe635e7c023e33c.setContent(html_adfd214547606ec168ee746a85436096);
+            
+        
+
+        marker_fbc486b898549b56f281948459d31cdc.bindPopup(popup_8749a7b3ed5e19b3bbe635e7c023e33c)
+        ;
+
+        
+    
+    
+            marker_fbc486b898549b56f281948459d31cdc.bindTooltip(
+                `<div>
+                     Dhakali — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fbc486b898549b56f281948459d31cdc.setIcon(icon_38dbc002eb47466a8ee8ccf6fd7e2527);
+            
+    
+            var marker_8a85cf89e76208889dbcb12d1c84663d = L.marker(
+                [20.469962971142802, 77.3206768346886],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_a9d1bc62991091a23d0be0b176b36621 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e1011f747c54a633907537b7ffcc9e40 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_200a5260ddd7ec0ee9c2950d9ca72616 = $(`<div id="html_200a5260ddd7ec0ee9c2950d9ca72616" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.88<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 60.55<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.17<br>         OC: 0.95 | N: 166.6<br>         P: 17.8 | K: 640.0     </div>     </div>`)[0];
+                popup_e1011f747c54a633907537b7ffcc9e40.setContent(html_200a5260ddd7ec0ee9c2950d9ca72616);
+            
+        
+
+        marker_8a85cf89e76208889dbcb12d1c84663d.bindPopup(popup_e1011f747c54a633907537b7ffcc9e40)
+        ;
+
+        
+    
+    
+            marker_8a85cf89e76208889dbcb12d1c84663d.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8a85cf89e76208889dbcb12d1c84663d.setIcon(icon_a9d1bc62991091a23d0be0b176b36621);
+            
+    
+            var marker_ab4b4e2117f405f16cfa02946c73eec6 = L.marker(
+                [20.469419913297934, 77.32080863054907],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_f92a0e7e76e03bb1a505869840e3317d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_92ce3a3f5d3d43c5fd1ce13a646dfe6d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_169053e17599c87091f3e9a7a96921fb = $(`<div id="html_169053e17599c87091f3e9a7a96921fb" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.88<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 60.55<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.17<br>         OC: 0.95 | N: 166.6<br>         P: 17.8 | K: 640.0     </div>     </div>`)[0];
+                popup_92ce3a3f5d3d43c5fd1ce13a646dfe6d.setContent(html_169053e17599c87091f3e9a7a96921fb);
+            
+        
+
+        marker_ab4b4e2117f405f16cfa02946c73eec6.bindPopup(popup_92ce3a3f5d3d43c5fd1ce13a646dfe6d)
+        ;
+
+        
+    
+    
+            marker_ab4b4e2117f405f16cfa02946c73eec6.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ab4b4e2117f405f16cfa02946c73eec6.setIcon(icon_f92a0e7e76e03bb1a505869840e3317d);
+            
+    
+            var marker_6208a502a1877a39390dbb571604546f = L.marker(
+                [20.47014776372195, 77.32108829840038],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_25b0e3841b5a1f878a1f8041a811ea80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57ddee945cff07f13782cd7e0324859e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_86126aaf711240874ce9d7c9333da160 = $(`<div id="html_86126aaf711240874ce9d7c9333da160" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 65.17<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 73.82<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.88<br>         OC: 1.24 | N: 210.6<br>         P: 21.9 | K: 640.0     </div>     </div>`)[0];
+                popup_57ddee945cff07f13782cd7e0324859e.setContent(html_86126aaf711240874ce9d7c9333da160);
+            
+        
+
+        marker_6208a502a1877a39390dbb571604546f.bindPopup(popup_57ddee945cff07f13782cd7e0324859e)
+        ;
+
+        
+    
+    
+            marker_6208a502a1877a39390dbb571604546f.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6208a502a1877a39390dbb571604546f.setIcon(icon_25b0e3841b5a1f878a1f8041a811ea80);
+            
+    
+            var marker_da3f4d8689d3a75fc3cd573e10a11634 = L.marker(
+                [20.470109270100494, 77.320905905648],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_afc2b722ec6b1785b8e920365b9c8595 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a4da7eef0564bef23b6af766f0ed336b = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a863184855215ce48ed1147939ca93e7 = $(`<div id="html_a863184855215ce48ed1147939ca93e7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.88<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.11<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.21<br>         OC: 0.67 | N: 121.9<br>         P: 24.6 | K: 500.9     </div>     </div>`)[0];
+                popup_a4da7eef0564bef23b6af766f0ed336b.setContent(html_a863184855215ce48ed1147939ca93e7);
+            
+        
+
+        marker_da3f4d8689d3a75fc3cd573e10a11634.bindPopup(popup_a4da7eef0564bef23b6af766f0ed336b)
+        ;
+
+        
+    
+    
+            marker_da3f4d8689d3a75fc3cd573e10a11634.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_da3f4d8689d3a75fc3cd573e10a11634.setIcon(icon_afc2b722ec6b1785b8e920365b9c8595);
+            
+    
+            var marker_75f33d97b0f78644c2b85bbe21ef6e2a = L.marker(
+                [20.46138583846798, 77.27755977987835],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_bc49da2316fb0c4ebca1795bcdbbc1ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d1f25ae037feb867e1f739c3cba0bb15 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d266a66caef2d135290bf2d44900c1e9 = $(`<div id="html_d266a66caef2d135290bf2d44900c1e9" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_d1f25ae037feb867e1f739c3cba0bb15.setContent(html_d266a66caef2d135290bf2d44900c1e9);
+            
+        
+
+        marker_75f33d97b0f78644c2b85bbe21ef6e2a.bindPopup(popup_d1f25ae037feb867e1f739c3cba0bb15)
+        ;
+
+        
+    
+    
+            marker_75f33d97b0f78644c2b85bbe21ef6e2a.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_75f33d97b0f78644c2b85bbe21ef6e2a.setIcon(icon_bc49da2316fb0c4ebca1795bcdbbc1ba);
+            
+    
+            var marker_134bf97bfa15d3e9f5f3a6a57442d93d = L.marker(
+                [20.460916729815654, 77.27725713421049],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_c619d0eafde47a01b7f9165bd7bebcc7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_774afbd1acd840bbe0ccb714b6c64080 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f23988947ea270fb5ac675a35d79d304 = $(`<div id="html_f23988947ea270fb5ac675a35d79d304" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_774afbd1acd840bbe0ccb714b6c64080.setContent(html_f23988947ea270fb5ac675a35d79d304);
+            
+        
+
+        marker_134bf97bfa15d3e9f5f3a6a57442d93d.bindPopup(popup_774afbd1acd840bbe0ccb714b6c64080)
+        ;
+
+        
+    
+    
+            marker_134bf97bfa15d3e9f5f3a6a57442d93d.bindTooltip(
+                `<div>
+                     Sawarkhed — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_134bf97bfa15d3e9f5f3a6a57442d93d.setIcon(icon_c619d0eafde47a01b7f9165bd7bebcc7);
+            
+    
+            var marker_394869d03fc0c80625c84d066fa40fd8 = L.marker(
+                [20.461504337087877, 77.27771541870182],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_362757130d67e3397e2aa295389fc03a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50afabe633eb6bf77ab1d8ee8746426e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_93f0ea9c6e86bac1c3275c924ed9e615 = $(`<div id="html_93f0ea9c6e86bac1c3275c924ed9e615" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 71.39<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 74.13<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.9 | EC: 0.75<br>         OC: 0.86 | N: 142.8<br>         P: 21.5 | K: 131.4     </div>     </div>`)[0];
+                popup_50afabe633eb6bf77ab1d8ee8746426e.setContent(html_93f0ea9c6e86bac1c3275c924ed9e615);
+            
+        
+
+        marker_394869d03fc0c80625c84d066fa40fd8.bindPopup(popup_50afabe633eb6bf77ab1d8ee8746426e)
+        ;
+
+        
+    
+    
+            marker_394869d03fc0c80625c84d066fa40fd8.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_394869d03fc0c80625c84d066fa40fd8.setIcon(icon_362757130d67e3397e2aa295389fc03a);
+            
+    
+            var marker_f583a65c59886cf689b326321dd7e2e6 = L.marker(
+                [20.461278615240683, 77.27702834415854],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_0a3370f3feb64938ce8fa9025083c064 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d94d1ad7a018f484cc54be4673404d47 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_437a6ceff14a6d78556a2ad24b2bcb1b = $(`<div id="html_437a6ceff14a6d78556a2ad24b2bcb1b" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 65.03<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 73.62<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.7 | EC: 0.66<br>         OC: 1.02 | N: 167.7<br>         P: 16.4 | K: 356.7     </div>     </div>`)[0];
+                popup_d94d1ad7a018f484cc54be4673404d47.setContent(html_437a6ceff14a6d78556a2ad24b2bcb1b);
+            
+        
+
+        marker_f583a65c59886cf689b326321dd7e2e6.bindPopup(popup_d94d1ad7a018f484cc54be4673404d47)
+        ;
+
+        
+    
+    
+            marker_f583a65c59886cf689b326321dd7e2e6.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f583a65c59886cf689b326321dd7e2e6.setIcon(icon_0a3370f3feb64938ce8fa9025083c064);
+            
+    
+            var marker_48dc0b67d0332892be5833354ed28419 = L.marker(
+                [20.460434148287042, 77.27809768364078],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_291289530c383eaa345b9a580d6eab17 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_34646388f491f15b5b67623475b3a523 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_78640b68d9e899a7bdc83b5ee3409282 = $(`<div id="html_78640b68d9e899a7bdc83b5ee3409282" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_34646388f491f15b5b67623475b3a523.setContent(html_78640b68d9e899a7bdc83b5ee3409282);
+            
+        
+
+        marker_48dc0b67d0332892be5833354ed28419.bindPopup(popup_34646388f491f15b5b67623475b3a523)
+        ;
+
+        
+    
+    
+            marker_48dc0b67d0332892be5833354ed28419.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_48dc0b67d0332892be5833354ed28419.setIcon(icon_291289530c383eaa345b9a580d6eab17);
+            
+    
+            var marker_9967f33fc9c33b1febac808125dbd58e = L.marker(
+                [20.461668171292292, 77.27782333015877],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_619eedc6c0338fa113f8c1224df494f7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ab4b35f2512cb8b2ca97a1a586a9c01f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ffbc5e8a3b95241adbd1ab0fab30fd98 = $(`<div id="html_ffbc5e8a3b95241adbd1ab0fab30fd98" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_ab4b35f2512cb8b2ca97a1a586a9c01f.setContent(html_ffbc5e8a3b95241adbd1ab0fab30fd98);
+            
+        
+
+        marker_9967f33fc9c33b1febac808125dbd58e.bindPopup(popup_ab4b35f2512cb8b2ca97a1a586a9c01f)
+        ;
+
+        
+    
+    
+            marker_9967f33fc9c33b1febac808125dbd58e.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9967f33fc9c33b1febac808125dbd58e.setIcon(icon_619eedc6c0338fa113f8c1224df494f7);
+            
+    
+            var marker_18f5801b6dd52c49b4c66bcfbc9f12d6 = L.marker(
+                [20.461367895582786, 77.2780003228361],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_51a75cb5d16132de0be5ff9cf3d6e2ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_03243afcfdd9d96f6976a8833d33fcd6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_95803665ebe044a85ab00a2c68a6ff63 = $(`<div id="html_95803665ebe044a85ab00a2c68a6ff63" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.37<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.38<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 5.9 | EC: 0.14<br>         OC: 1.41 | N: 293.5<br>         P: 12.5 | K: 637.9     </div>     </div>`)[0];
+                popup_03243afcfdd9d96f6976a8833d33fcd6.setContent(html_95803665ebe044a85ab00a2c68a6ff63);
+            
+        
+
+        marker_18f5801b6dd52c49b4c66bcfbc9f12d6.bindPopup(popup_03243afcfdd9d96f6976a8833d33fcd6)
+        ;
+
+        
+    
+    
+            marker_18f5801b6dd52c49b4c66bcfbc9f12d6.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_18f5801b6dd52c49b4c66bcfbc9f12d6.setIcon(icon_51a75cb5d16132de0be5ff9cf3d6e2ca);
+            
+    
+            var marker_8d7931b239ce5b8adce7daa9f83f8c40 = L.marker(
+                [20.46140279002739, 77.27743533635538],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_61f85966da546ce33a3aa7ee0b531ad0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_91d4a22788d3a37bc507adbef02390d0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_94680a2d7cb484f128db034b6003131f = $(`<div id="html_94680a2d7cb484f128db034b6003131f" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 54.48<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 58.54<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.11<br>         OC: 0.97 | N: 125.8<br>         P: 17.4 | K: 489.6     </div>     </div>`)[0];
+                popup_91d4a22788d3a37bc507adbef02390d0.setContent(html_94680a2d7cb484f128db034b6003131f);
+            
+        
+
+        marker_8d7931b239ce5b8adce7daa9f83f8c40.bindPopup(popup_91d4a22788d3a37bc507adbef02390d0)
+        ;
+
+        
+    
+    
+            marker_8d7931b239ce5b8adce7daa9f83f8c40.bindTooltip(
+                `<div>
+                     Sawarkhed — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8d7931b239ce5b8adce7daa9f83f8c40.setIcon(icon_61f85966da546ce33a3aa7ee0b531ad0);
+            
+    
+            var marker_1dbd05f8ce93ee58957ad567c1d6b01c = L.marker(
+                [20.460481659085747, 77.27829797723415],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_ac577813198599b8fde42bb533b91d4d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a29f02d8464eb655833dc84be4ea51d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_dd24bd060b24dafe8d3c1f69c22ebbeb = $(`<div id="html_dd24bd060b24dafe8d3c1f69c22ebbeb" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 65.03<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 73.62<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.7 | EC: 0.66<br>         OC: 1.02 | N: 167.7<br>         P: 16.4 | K: 356.7     </div>     </div>`)[0];
+                popup_a29f02d8464eb655833dc84be4ea51d4.setContent(html_dd24bd060b24dafe8d3c1f69c22ebbeb);
+            
+        
+
+        marker_1dbd05f8ce93ee58957ad567c1d6b01c.bindPopup(popup_a29f02d8464eb655833dc84be4ea51d4)
+        ;
+
+        
+    
+    
+            marker_1dbd05f8ce93ee58957ad567c1d6b01c.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1dbd05f8ce93ee58957ad567c1d6b01c.setIcon(icon_ac577813198599b8fde42bb533b91d4d);
+            
+    
+            var marker_bc6c660438266d68485c5b95a6bdbda2 = L.marker(
+                [20.460932840313053, 77.27818936956984],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_6d3819e06464370b0f0e3312b47d52df = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_30208dc88c8dd16e3a8b0aabf138094a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_2023f96eac60a0a7741ee8746acf6c48 = $(`<div id="html_2023f96eac60a0a7741ee8746acf6c48" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 65.17<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 73.82<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.88<br>         OC: 1.24 | N: 210.6<br>         P: 21.9 | K: 640.0     </div>     </div>`)[0];
+                popup_30208dc88c8dd16e3a8b0aabf138094a.setContent(html_2023f96eac60a0a7741ee8746acf6c48);
+            
+        
+
+        marker_bc6c660438266d68485c5b95a6bdbda2.bindPopup(popup_30208dc88c8dd16e3a8b0aabf138094a)
+        ;
+
+        
+    
+    
+            marker_bc6c660438266d68485c5b95a6bdbda2.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bc6c660438266d68485c5b95a6bdbda2.setIcon(icon_6d3819e06464370b0f0e3312b47d52df);
+            
+    
+            var marker_c6d625c147711d8806cb77eeed9ee837 = L.marker(
+                [20.460821417233927, 77.27802873689589],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_03cd9162f661ca8efa998b9d003b00ea = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7e6e13725aefee945beec9d34c54887d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_41cc9781b7e883cf80ca2db2062c17d2 = $(`<div id="html_41cc9781b7e883cf80ca2db2062c17d2" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 71.39<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 74.13<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.9 | EC: 0.75<br>         OC: 0.86 | N: 142.8<br>         P: 21.5 | K: 131.4     </div>     </div>`)[0];
+                popup_7e6e13725aefee945beec9d34c54887d.setContent(html_41cc9781b7e883cf80ca2db2062c17d2);
+            
+        
+
+        marker_c6d625c147711d8806cb77eeed9ee837.bindPopup(popup_7e6e13725aefee945beec9d34c54887d)
+        ;
+
+        
+    
+    
+            marker_c6d625c147711d8806cb77eeed9ee837.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c6d625c147711d8806cb77eeed9ee837.setIcon(icon_03cd9162f661ca8efa998b9d003b00ea);
+            
+    
+            var marker_3305306e70725f19b3532288b92d634b = L.marker(
+                [20.46952506973064, 77.32079231116091],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_120addb2da01a95e71cfceab3f58fcf9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_24b0d9bdc368a96c79d59bffe3eea82c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b36b816932cb27c8752cc35a112bb8ca = $(`<div id="html_b36b816932cb27c8752cc35a112bb8ca" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Dhakali</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.88<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 60.55<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.17<br>         OC: 0.95 | N: 166.6<br>         P: 17.8 | K: 640.0     </div>     </div>`)[0];
+                popup_24b0d9bdc368a96c79d59bffe3eea82c.setContent(html_b36b816932cb27c8752cc35a112bb8ca);
+            
+        
+
+        marker_3305306e70725f19b3532288b92d634b.bindPopup(popup_24b0d9bdc368a96c79d59bffe3eea82c)
+        ;
+
+        
+    
+    
+            marker_3305306e70725f19b3532288b92d634b.bindTooltip(
+                `<div>
+                     Dhakali — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3305306e70725f19b3532288b92d634b.setIcon(icon_120addb2da01a95e71cfceab3f58fcf9);
+            
+    
+            var marker_aac3c92cb68902e4d05fdeb3f940535e = L.marker(
+                [20.46159977098439, 77.277211494191],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_fa9a333c55749e4293cc6240591fbb3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_109f817fbcb988f54fbc205c4e285501 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_5b86bb0cb3988c68dbfeebc989bbfca7 = $(`<div id="html_5b86bb0cb3988c68dbfeebc989bbfca7" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 65.17<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 73.82<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 6.8 | EC: 0.88<br>         OC: 1.24 | N: 210.6<br>         P: 21.9 | K: 640.0     </div>     </div>`)[0];
+                popup_109f817fbcb988f54fbc205c4e285501.setContent(html_5b86bb0cb3988c68dbfeebc989bbfca7);
+            
+        
+
+        marker_aac3c92cb68902e4d05fdeb3f940535e.bindPopup(popup_109f817fbcb988f54fbc205c4e285501)
+        ;
+
+        
+    
+    
+            marker_aac3c92cb68902e4d05fdeb3f940535e.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aac3c92cb68902e4d05fdeb3f940535e.setIcon(icon_fa9a333c55749e4293cc6240591fbb3d);
+            
+    
+            var marker_9dae38919941fa7b61828a96acfefcda = L.marker(
+                [20.461203711168114, 77.27759240940522],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_b0ebd2054629957eeeed794c526190ca = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57bded82ee06399d8f845ac819479961 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1e3478cdce5588f36ba061008c4fef1e = $(`<div id="html_1e3478cdce5588f36ba061008c4fef1e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 71.39<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 74.13<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.9 | EC: 0.75<br>         OC: 0.86 | N: 142.8<br>         P: 21.5 | K: 131.4     </div>     </div>`)[0];
+                popup_57bded82ee06399d8f845ac819479961.setContent(html_1e3478cdce5588f36ba061008c4fef1e);
+            
+        
+
+        marker_9dae38919941fa7b61828a96acfefcda.bindPopup(popup_57bded82ee06399d8f845ac819479961)
+        ;
+
+        
+    
+    
+            marker_9dae38919941fa7b61828a96acfefcda.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9dae38919941fa7b61828a96acfefcda.setIcon(icon_b0ebd2054629957eeeed794c526190ca);
+            
+    
+            var marker_3228d219909acab00b04b9c23c6d426e = L.marker(
+                [20.46145416625858, 77.2770003252721],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_5c8faf3b5998d93516199e6d0fede011 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b4c990160b752db1c14bcceea7c59da = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f6e296bcf9de3b5762557e1cb0d85683 = $(`<div id="html_f6e296bcf9de3b5762557e1cb0d85683" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Sawarkhed</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 62.78<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 70.4<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.2 | EC: 0.98<br>         OC: 0.92 | N: 184.8<br>         P: 57.6 | K: 768.2     </div>     </div>`)[0];
+                popup_2b4c990160b752db1c14bcceea7c59da.setContent(html_f6e296bcf9de3b5762557e1cb0d85683);
+            
+        
+
+        marker_3228d219909acab00b04b9c23c6d426e.bindPopup(popup_2b4c990160b752db1c14bcceea7c59da)
+        ;
+
+        
+    
+    
+            marker_3228d219909acab00b04b9c23c6d426e.bindTooltip(
+                `<div>
+                     Sawarkhed — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_3228d219909acab00b04b9c23c6d426e.setIcon(icon_5c8faf3b5998d93516199e6d0fede011);
+            
+    
+            var marker_d8ab8caacc2dffb876b3d854de0f877d = L.marker(
+                [20.503479428538533, 77.37586710988704],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_acc72fd50cb846820f25ed3d964e7561 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b76b3a7615ac4dda5e1456e2a98b4f44 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0e0364ef032f2751dcc35b53a7b9dd57 = $(`<div id="html_0e0364ef032f2751dcc35b53a7b9dd57" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 62.38<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 61.25<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.0 | EC: 0.22<br>         OC: 1.37 | N: 138.3<br>         P: 25.0 | K: 1092.2     </div>     </div>`)[0];
+                popup_b76b3a7615ac4dda5e1456e2a98b4f44.setContent(html_0e0364ef032f2751dcc35b53a7b9dd57);
+            
+        
+
+        marker_d8ab8caacc2dffb876b3d854de0f877d.bindPopup(popup_b76b3a7615ac4dda5e1456e2a98b4f44)
+        ;
+
+        
+    
+    
+            marker_d8ab8caacc2dffb876b3d854de0f877d.bindTooltip(
+                `<div>
+                     Morhal — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d8ab8caacc2dffb876b3d854de0f877d.setIcon(icon_acc72fd50cb846820f25ed3d964e7561);
+            
+    
+            var marker_7a4faccef20e5103a7d96fda4ab0872c = L.marker(
+                [20.50257356208787, 77.37590960826297],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_d33044ff10b93fcf4ac9a4421773aadc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8cffdc93da467f24c2fce08252a6983c = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d2872ecb5a781917a4855a521abc1870 = $(`<div id="html_d2872ecb5a781917a4855a521abc1870" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 65.17<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 65.24<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.0 | EC: 0.14<br>         OC: 0.8 | N: 167.9<br>         P: 30.1 | K: 1162.4     </div>     </div>`)[0];
+                popup_8cffdc93da467f24c2fce08252a6983c.setContent(html_d2872ecb5a781917a4855a521abc1870);
+            
+        
+
+        marker_7a4faccef20e5103a7d96fda4ab0872c.bindPopup(popup_8cffdc93da467f24c2fce08252a6983c)
+        ;
+
+        
+    
+    
+            marker_7a4faccef20e5103a7d96fda4ab0872c.bindTooltip(
+                `<div>
+                     Morhal — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7a4faccef20e5103a7d96fda4ab0872c.setIcon(icon_d33044ff10b93fcf4ac9a4421773aadc);
+            
+    
+            var marker_aa17f82e370ff754b83473a27eb0c84a = L.marker(
+                [20.50237159690239, 77.37709105673036],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_588aeaec9dacffe8a54b03c7ec95e9dd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_85cb270dc561c1123af5bab188eae395 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9bdd7602ceb5584b0429909200f6cc43 = $(`<div id="html_9bdd7602ceb5584b0429909200f6cc43" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.88<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.11<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.21<br>         OC: 0.67 | N: 121.9<br>         P: 24.6 | K: 500.9     </div>     </div>`)[0];
+                popup_85cb270dc561c1123af5bab188eae395.setContent(html_9bdd7602ceb5584b0429909200f6cc43);
+            
+        
+
+        marker_aa17f82e370ff754b83473a27eb0c84a.bindPopup(popup_85cb270dc561c1123af5bab188eae395)
+        ;
+
+        
+    
+    
+            marker_aa17f82e370ff754b83473a27eb0c84a.bindTooltip(
+                `<div>
+                     Morhal — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aa17f82e370ff754b83473a27eb0c84a.setIcon(icon_588aeaec9dacffe8a54b03c7ec95e9dd);
+            
+    
+            var marker_a8361213ab4f56183edc8ab15020d229 = L.marker(
+                [20.502465867005085, 77.37701641296698],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_1ef53db470cef8715d8271744234d216 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f006b1966224e48d2b2420b5fce25cf0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b661970aa2f52ac8f5dc0be6ece13d0e = $(`<div id="html_b661970aa2f52ac8f5dc0be6ece13d0e" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.85<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.07<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 8.4 | EC: 0.16<br>         OC: 3.07 | N: 153.8<br>         P: 22.0 | K: 649.8     </div>     </div>`)[0];
+                popup_f006b1966224e48d2b2420b5fce25cf0.setContent(html_b661970aa2f52ac8f5dc0be6ece13d0e);
+            
+        
+
+        marker_a8361213ab4f56183edc8ab15020d229.bindPopup(popup_f006b1966224e48d2b2420b5fce25cf0)
+        ;
+
+        
+    
+    
+            marker_a8361213ab4f56183edc8ab15020d229.bindTooltip(
+                `<div>
+                     Morhal — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a8361213ab4f56183edc8ab15020d229.setIcon(icon_1ef53db470cef8715d8271744234d216);
+            
+    
+            var marker_ac21e13dbdd26ae537ac24760dd8f36c = L.marker(
+                [20.566748993457146, 77.32251617998092],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_7a9a1406fc26e65240b1e8418260b7b9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_954d69d6f8134b3dff7b071748ceb203 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_37f1944ca16a699e958b3e29e3543bca = $(`<div id="html_37f1944ca16a699e958b3e29e3543bca" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Ghota</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 61.58<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 68.69<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.1 | EC: 0.15<br>         OC: 0.9 | N: 104.5<br>         P: 13.2 | K: 224.0     </div>     </div>`)[0];
+                popup_954d69d6f8134b3dff7b071748ceb203.setContent(html_37f1944ca16a699e958b3e29e3543bca);
+            
+        
+
+        marker_ac21e13dbdd26ae537ac24760dd8f36c.bindPopup(popup_954d69d6f8134b3dff7b071748ceb203)
+        ;
+
+        
+    
+    
+            marker_ac21e13dbdd26ae537ac24760dd8f36c.bindTooltip(
+                `<div>
+                     Ghota — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ac21e13dbdd26ae537ac24760dd8f36c.setIcon(icon_7a9a1406fc26e65240b1e8418260b7b9);
+            
+    
+            var marker_bd22434de4a3c34868bd01275bf8805c = L.marker(
+                [20.502412604344926, 77.3450534152802],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_f9c9731516dfcfb03ff268d4437ee8dc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b7973db369cec8b702f0bb0ec14315d1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d5df27be87d9c449bb6fd9fbf2dede03 = $(`<div id="html_d5df27be87d9c449bb6fd9fbf2dede03" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Chinchkhed Bk.</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 57.8<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 63.29<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.09<br>         OC: 0.98 | N: 143.8<br>         P: 39.7 | K: 509.0     </div>     </div>`)[0];
+                popup_b7973db369cec8b702f0bb0ec14315d1.setContent(html_d5df27be87d9c449bb6fd9fbf2dede03);
+            
+        
+
+        marker_bd22434de4a3c34868bd01275bf8805c.bindPopup(popup_b7973db369cec8b702f0bb0ec14315d1)
+        ;
+
+        
+    
+    
+            marker_bd22434de4a3c34868bd01275bf8805c.bindTooltip(
+                `<div>
+                     Chinchkhed Bk. — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bd22434de4a3c34868bd01275bf8805c.setIcon(icon_f9c9731516dfcfb03ff268d4437ee8dc);
+            
+    
+            var marker_bbb50016018085b98f0794f50d0dffab = L.marker(
+                [20.503351103090836, 77.37672398998733],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_3e881172dcde45a07ee8736943a11990 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ac3ce648d4a833251efd69d5da16b70 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_26e2d07cbac815bc6a50473f7aeb5c39 = $(`<div id="html_26e2d07cbac815bc6a50473f7aeb5c39" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 63.95<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 63.5<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.7 | EC: 0.17<br>         OC: 0.89 | N: 80.3<br>         P: 29.1 | K: 1124.4     </div>     </div>`)[0];
+                popup_1ac3ce648d4a833251efd69d5da16b70.setContent(html_26e2d07cbac815bc6a50473f7aeb5c39);
+            
+        
+
+        marker_bbb50016018085b98f0794f50d0dffab.bindPopup(popup_1ac3ce648d4a833251efd69d5da16b70)
+        ;
+
+        
+    
+    
+            marker_bbb50016018085b98f0794f50d0dffab.bindTooltip(
+                `<div>
+                     Morhal — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bbb50016018085b98f0794f50d0dffab.setIcon(icon_3e881172dcde45a07ee8736943a11990);
+            
+    
+            var marker_dca3df158d54a9eae8fc86a85f8f2e7e = L.marker(
+                [20.50298642812235, 77.37611661794604],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_b2f098c4f77e1179337b37af86429651 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_711e67ebaa6bedb31ed25c616e4cbfda = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_16fc66223c943cc0dd8be17e498bbcad = $(`<div id="html_16fc66223c943cc0dd8be17e498bbcad" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 60.88<br>         <b>Category:</b> Moderately Sustainable<br>         <b>Chemical Health:</b> 59.11<br>         <b>Physical Health:</b> 65<br>         <hr style="margin:4px 0;">         pH: 7.8 | EC: 0.21<br>         OC: 0.67 | N: 121.9<br>         P: 24.6 | K: 500.9     </div>     </div>`)[0];
+                popup_711e67ebaa6bedb31ed25c616e4cbfda.setContent(html_16fc66223c943cc0dd8be17e498bbcad);
+            
+        
+
+        marker_dca3df158d54a9eae8fc86a85f8f2e7e.bindPopup(popup_711e67ebaa6bedb31ed25c616e4cbfda)
+        ;
+
+        
+    
+    
+            marker_dca3df158d54a9eae8fc86a85f8f2e7e.bindTooltip(
+                `<div>
+                     Morhal — Moderately Sustainable
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dca3df158d54a9eae8fc86a85f8f2e7e.setIcon(icon_b2f098c4f77e1179337b37af86429651);
+            
+    
+            var marker_4b3b2c54f66d486bdaa421df5ad7336e = L.marker(
+                [20.502565580490646, 77.37710124692828],
+                {
+}
+            ).addTo(marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61);
+        
+    
+            var icon_aad47445a388e6937c817935e79a34e2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0bdef91166488e6326c06489ad2d65db = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_325d3b1b0bbc181813852d13f61d3327 = $(`<div id="html_325d3b1b0bbc181813852d13f61d3327" style="width: 100.0%; height: 100.0%;">     <div style="font-family: Arial, sans-serif; font-size: 13px; min-width: 200px;">         <b>Morhal</b><br>         Barshitakli, Akola, Maharashtra<br>         <hr style="margin:4px 0;">         <b>SSS Score:</b> 55.72<br>         <b>Category:</b> Needs Improvement<br>         <b>Chemical Health:</b> 60.32<br>         <b>Physical Health:</b> 45<br>         <hr style="margin:4px 0;">         pH: 8.1 | EC: 0.1<br>         OC: 2.61 | N: 142.0<br>         P: 22.6 | K: 554.4     </div>     </div>`)[0];
+                popup_0bdef91166488e6326c06489ad2d65db.setContent(html_325d3b1b0bbc181813852d13f61d3327);
+            
+        
+
+        marker_4b3b2c54f66d486bdaa421df5ad7336e.bindPopup(popup_0bdef91166488e6326c06489ad2d65db)
+        ;
+
+        
+    
+    
+            marker_4b3b2c54f66d486bdaa421df5ad7336e.bindTooltip(
+                `<div>
+                     Morhal — Needs Improvement
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4b3b2c54f66d486bdaa421df5ad7336e.setIcon(icon_aad47445a388e6937c817935e79a34e2);
+            
+    
+            marker_cluster_68dfd0a6e1e6d2f605b0bce252ba0b61.addTo(map_0d8d0c137dccce565f019ad85de86176);
+        
+</script>
+</html>

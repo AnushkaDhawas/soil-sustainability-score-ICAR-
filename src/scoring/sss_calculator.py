@@ -46,6 +46,7 @@ def _trapezoidal_score(value: float, low_bound: float, low_ideal: float,
     """
     Generic trapezoidal scoring function.
 
+    
         low_bound   -> score 0
         low_ideal   -> score 100
         high_ideal  -> score 100

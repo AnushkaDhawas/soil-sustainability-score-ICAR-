@@ -16,7 +16,7 @@ data/processed/*
 !data/processed/akola_soil_scored.csv
 
 # Trained model artifacts
-*.pkl
+#*.pkl
 *.joblib
 *.h5
 
@@ -35,6 +35,7 @@ data/processed/*
 # Outputs
 outputs/reports/*
 !outputs/reports/.gitkeep
+!outputs/reports/soil_sustainability_map.html
 
 # Logs
 *.log

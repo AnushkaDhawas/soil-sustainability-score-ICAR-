@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+<main class="content-page">
+  <section class="page-header">
+    <h1>About This Project</h1>
+    <p class="page-sub">How the Soil Sustainability Score is built, validated, and used.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>The Problem</h2>
+    <p>Existing soil test reports provide individual parameters &mdash; pH, nitrogen, phosphorus, and so on &mdash; but don't indicate <em>overall</em> soil sustainability. Farmers and agriculture officers are often left interpreting raw numbers without a clear picture of soil health or what to do about it.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Our Approach</h2>
+    <p>The Soil Sustainability Score (SSS) combines six chemical parameters and soil texture into a single 0&ndash;100 score using a transparent, calibrated formula:</p>
+    <div class="formula-box">SSS = (0.70 &times; Chemical Health Score) + (0.30 &times; Physical Health Score)</div>
+    <p>Each parameter is scored against agronomically ideal ranges, then combined with weights reflecting their relative importance to soil fertility.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Real Data, Real Validation</h2>
+    <p>The system was built and tested using an actual government soil survey dataset for Akola district, Maharashtra &mdash; 112 raw records, refined down to 86 genuine soil profiles after removing non-agricultural entries (waterbodies, habitation areas).</p>
+    <div class="table-wrap">
+      <table class="about-table">
+        <thead><tr><th>Step</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Raw records</td><td>112</td></tr>
+          <tr><td>Valid soil profiles</td><td>86</td></tr>
+          <tr><td>Random Forest accuracy</td><td>90.91%</td></tr>
+          <tr><td>XGBoost accuracy</td><td>90.91%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Both machine learning models were trained on the scored dataset to confirm the formula's logic holds up &mdash; Electrical Conductivity emerged as the single most influential parameter in both models.</p>
+  </section>
+
+  <section class="content-section">
+    <h2>Who It's For</h2>
+    <div class="user-grid">
+      <div class="user-card">
+        <h3>Farmer</h3>
+        <p>Look up your soil's sustainability score by village &mdash; no lab report needed.</p>
+      </div>
+      <div class="user-card">
+        <h3>Researcher</h3>
+        <p>Enter raw soil parameters manually or look up existing profiles; access full scoring breakdowns.</p>
+      </div>
+      <div class="user-card">
+        <h3>Administrator</h3>
+        <p>Full access to manual entry, village lookup, and district-level sustainability trends.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <h2>Technology</h2>
+    <div class="tech-tags">
+      <span class="tech-tag">Python</span>
+      <span class="tech-tag">Flask</span>
+      <span class="tech-tag">Pandas</span>
+      <span class="tech-tag">Random Forest</span>
+      <span class="tech-tag">XGBoost</span>
+      <span class="tech-tag">GeoPandas</span>
+      <span class="tech-tag">Folium / GIS</span>
+      <span class="tech-tag">HTML &amp; CSS</span>
+    </div>
+  </section>
+
+  <section class="content-section team-section">
+    <h2>Team</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">AD</div>
+        <p class="team-name">Anushka Dhawas</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">AD</div>
+        <p class="team-name">Ayushi Deulkar</p>
+      </div>
+    </div>
+    <p class="guide-line">Under the guidance of <strong>ICAR &mdash; Indian Council of Agricultural Research</strong></p>
+  </section>
+</main>
+{% endblock %}
