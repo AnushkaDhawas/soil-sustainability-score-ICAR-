@@ -8,6 +8,18 @@ from flask_cors import CORS
 from scoring.sss_calculator import SoilSample, calculate_sss
 import joblib
 import pandas as pd
+"""
+Flask entry point for the Soil Sustainability Score API.
+Run with:  python app.py
+"""
+import sys
+import os
+
+# Allow imports from the project root (so "src.scoring..." works)
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..")))
+
+from flask import Flask, jsonify, request
+from src.scoring.sss_calculator import SoilSample, calculate_sss
 
 REPO_ROOT_FOR_APP = Path(__file__).resolve().parent.parent.parent
 app = Flask(
@@ -149,6 +161,21 @@ def score_by_location():
                          "searched_for": provided_original}), 404
     results = filtered.to_dict(orient="records")
     return jsonify({"match_count": len(results), "profiles": results}), 200
+def score():
+    data = request.get_json()
+
+    sample = SoilSample(
+        ph=data["ph"],
+        organic_carbon=data["organic_carbon"],
+        nitrogen=data["nitrogen"],
+        phosphorus=data["phosphorus"],
+        potassium=data["potassium"],
+        ec=data["ec"],
+        texture_score=data["texture_score"],
+    )
+
+    result = calculate_sss(sample)
+    return jsonify(result)
 
 
 if __name__ == "__main__":
